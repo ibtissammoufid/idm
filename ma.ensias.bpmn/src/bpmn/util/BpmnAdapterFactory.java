@@ -17,6 +17,7 @@ import bpmn.OR;
 import bpmn.Parallel;
 import bpmn.Pool;
 import bpmn.SequenceFlow;
+import bpmn.SousProcess;
 import bpmn.Split;
 import bpmn.SubProcess;
 import bpmn.Task;
@@ -89,6 +90,10 @@ public class BpmnAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseProcess(bpmn.Process object) {
 				return createProcessAdapter();
+			}
+			@Override
+			public Adapter caseSousProcess(SousProcess object) {
+				return createSousProcessAdapter();
 			}
 			@Override
 			public Adapter caseGateWay(GateWay object) {
@@ -201,6 +206,20 @@ public class BpmnAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createProcessAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link bpmn.SousProcess <em>Sous Process</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see bpmn.SousProcess
+	 * @generated
+	 */
+	public Adapter createSousProcessAdapter() {
 		return null;
 	}
 

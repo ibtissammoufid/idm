@@ -96,9 +96,9 @@ public class UserStoryGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Group cGroup_18 = (Group)cGroup.eContents().get(18);
 		private final Keyword cComingKeyword_18_0 = (Keyword)cGroup_18.eContents().get(0);
 		private final Keyword cFromKeyword_18_1 = (Keyword)cGroup_18.eContents().get(1);
-		private final Assignment cActivity1Assignment_18_2 = (Assignment)cGroup_18.eContents().get(2);
-		private final CrossReference cActivity1UsActivityCrossReference_18_2_0 = (CrossReference)cActivity1Assignment_18_2.eContents().get(0);
-		private final RuleCall cActivity1UsActivityIDTerminalRuleCall_18_2_0_1 = (RuleCall)cActivity1UsActivityCrossReference_18_2_0.eContents().get(1);
+		private final Assignment cOtherActivityAssignment_18_2 = (Assignment)cGroup_18.eContents().get(2);
+		private final CrossReference cOtherActivityUsActivityCrossReference_18_2_0 = (CrossReference)cOtherActivityAssignment_18_2.eContents().get(0);
+		private final RuleCall cOtherActivityUsActivityIDTerminalRuleCall_18_2_0_1 = (RuleCall)cOtherActivityUsActivityCrossReference_18_2_0.eContents().get(1);
 		private final Group cGroup_19 = (Group)cGroup.eContents().get(19);
 		private final Keyword cThenKeyword_19_0 = (Keyword)cGroup_19.eContents().get(0);
 		private final Assignment cEventAssignment_19_1 = (Assignment)cGroup_19.eContents().get(1);
@@ -106,15 +106,15 @@ public class UserStoryGrammarAccess extends AbstractElementFinder.AbstractGramma
 		
 		//Us:
 		//	'User' 'story' ':' id=INT titre=STRING?
-		//	'As' 'a' role=Role 'I' 'want' 'to' 'be' 'able' 'to' activity=usActivity ('Scenario' ':')? ('Given'
+		//	'As' 'a' role=Role? 'I' 'want' 'to' 'be' 'able' 'to' activity=usActivity? ('Scenario' ':')? ('Given'
 		//	artifact=usArtifact ('and' otherArtifact=usArtifact)*)? ('When' Event=usEvent ('and' otherEvent=usEvent)*)? ('coming'
-		//	'from' activity1=[usActivity])? ('Then' Event=usEvent)?;
+		//	'from' otherActivity=[usActivity]*)? ('Then' Event=usEvent)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'User' 'story' ':' id=INT titre=STRING?
-		//'As' 'a' role=Role 'I' 'want' 'to' 'be' 'able' 'to' activity=usActivity ('Scenario' ':')? ('Given' artifact=usArtifact (
-		//'and' otherArtifact=usArtifact)*)? ('When' Event=usEvent ('and' otherEvent=usEvent)*)? ('coming' 'from'
-		//activity1=[usActivity])? ('Then' Event=usEvent)?
+		//'As' 'a' role=Role? 'I' 'want' 'to' 'be' 'able' 'to' activity=usActivity? ('Scenario' ':')? ('Given' artifact=usArtifact
+		//('and' otherArtifact=usArtifact)*)? ('When' Event=usEvent ('and' otherEvent=usEvent)*)? ('coming' 'from'
+		//otherActivity=[usActivity]*)? ('Then' Event=usEvent)?
 		public Group getGroup() { return cGroup; }
 		
 		//'User'
@@ -144,7 +144,7 @@ public class UserStoryGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//'a'
 		public Keyword getAKeyword_6() { return cAKeyword_6; }
 		
-		//role=Role
+		//role=Role?
 		public Assignment getRoleAssignment_7() { return cRoleAssignment_7; }
 		
 		//Role
@@ -168,7 +168,7 @@ public class UserStoryGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//'to'
 		public Keyword getToKeyword_13() { return cToKeyword_13; }
 		
-		//activity=usActivity
+		//activity=usActivity?
 		public Assignment getActivityAssignment_14() { return cActivityAssignment_14; }
 		
 		//usActivity
@@ -231,7 +231,7 @@ public class UserStoryGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//usEvent
 		public RuleCall getOtherEventUsEventParserRuleCall_17_2_1_0() { return cOtherEventUsEventParserRuleCall_17_2_1_0; }
 		
-		//('coming' 'from' activity1=[usActivity])?
+		//('coming' 'from' otherActivity=[usActivity]*)?
 		public Group getGroup_18() { return cGroup_18; }
 		
 		//'coming'
@@ -240,14 +240,14 @@ public class UserStoryGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//'from'
 		public Keyword getFromKeyword_18_1() { return cFromKeyword_18_1; }
 		
-		//activity1=[usActivity]
-		public Assignment getActivity1Assignment_18_2() { return cActivity1Assignment_18_2; }
+		//otherActivity=[usActivity]*
+		public Assignment getOtherActivityAssignment_18_2() { return cOtherActivityAssignment_18_2; }
 		
 		//[usActivity]
-		public CrossReference getActivity1UsActivityCrossReference_18_2_0() { return cActivity1UsActivityCrossReference_18_2_0; }
+		public CrossReference getOtherActivityUsActivityCrossReference_18_2_0() { return cOtherActivityUsActivityCrossReference_18_2_0; }
 		
 		//ID
-		public RuleCall getActivity1UsActivityIDTerminalRuleCall_18_2_0_1() { return cActivity1UsActivityIDTerminalRuleCall_18_2_0_1; }
+		public RuleCall getOtherActivityUsActivityIDTerminalRuleCall_18_2_0_1() { return cOtherActivityUsActivityIDTerminalRuleCall_18_2_0_1; }
 		
 		//('Then' Event=usEvent)?
 		public Group getGroup_19() { return cGroup_19; }
@@ -285,15 +285,19 @@ public class UserStoryGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cIdAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cIdINTTerminalRuleCall_0_0 = (RuleCall)cIdAssignment_0.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cRefAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cRefINTTerminalRuleCall_1_0 = (RuleCall)cRefAssignment_1.eContents().get(0);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		
 		//usTask:
 		//	id=INT
+		//	ref=INT?
 		//	name=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//id=INT
+		//ref=INT?
 		//name=STRING
 		public Group getGroup() { return cGroup; }
 		
@@ -303,29 +307,39 @@ public class UserStoryGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//INT
 		public RuleCall getIdINTTerminalRuleCall_0_0() { return cIdINTTerminalRuleCall_0_0; }
 		
+		//ref=INT?
+		public Assignment getRefAssignment_1() { return cRefAssignment_1; }
+		
+		//INT
+		public RuleCall getRefINTTerminalRuleCall_1_0() { return cRefINTTerminalRuleCall_1_0; }
+		
 		//name=STRING
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
 		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
+		public RuleCall getNameSTRINGTerminalRuleCall_2_0() { return cNameSTRINGTerminalRuleCall_2_0; }
 	}
 	public class UsEventElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.userstory.UserStory.usEvent");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cIdAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cIdINTTerminalRuleCall_0_0 = (RuleCall)cIdAssignment_0.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cTypeINTTerminalRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
+		private final Assignment cRefAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cRefINTTerminalRuleCall_1_0 = (RuleCall)cRefAssignment_1.eContents().get(0);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Assignment cTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cTypeINTTerminalRuleCall_3_0 = (RuleCall)cTypeAssignment_3.eContents().get(0);
 		
 		//usEvent:
 		//	id=INT
+		//	ref=INT?
 		//	name=STRING
 		//	type=INT;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//id=INT
+		//ref=INT?
 		//name=STRING
 		//type=INT
 		public Group getGroup() { return cGroup; }
@@ -336,17 +350,23 @@ public class UserStoryGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//INT
 		public RuleCall getIdINTTerminalRuleCall_0_0() { return cIdINTTerminalRuleCall_0_0; }
 		
-		//name=STRING
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
-		
-		//type=INT
-		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
+		//ref=INT?
+		public Assignment getRefAssignment_1() { return cRefAssignment_1; }
 		
 		//INT
-		public RuleCall getTypeINTTerminalRuleCall_2_0() { return cTypeINTTerminalRuleCall_2_0; }
+		public RuleCall getRefINTTerminalRuleCall_1_0() { return cRefINTTerminalRuleCall_1_0; }
+		
+		//name=STRING
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_2_0() { return cNameSTRINGTerminalRuleCall_2_0; }
+		
+		//type=INT
+		public Assignment getTypeAssignment_3() { return cTypeAssignment_3; }
+		
+		//INT
+		public RuleCall getTypeINTTerminalRuleCall_3_0() { return cTypeINTTerminalRuleCall_3_0; }
 	}
 	public class UsArtifactElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.userstory.UserStory.usArtifact");
@@ -495,9 +515,9 @@ public class UserStoryGrammarAccess extends AbstractElementFinder.AbstractGramma
 	
 	//Us:
 	//	'User' 'story' ':' id=INT titre=STRING?
-	//	'As' 'a' role=Role 'I' 'want' 'to' 'be' 'able' 'to' activity=usActivity ('Scenario' ':')? ('Given'
+	//	'As' 'a' role=Role? 'I' 'want' 'to' 'be' 'able' 'to' activity=usActivity? ('Scenario' ':')? ('Given'
 	//	artifact=usArtifact ('and' otherArtifact=usArtifact)*)? ('When' Event=usEvent ('and' otherEvent=usEvent)*)? ('coming'
-	//	'from' activity1=[usActivity])? ('Then' Event=usEvent)?;
+	//	'from' otherActivity=[usActivity]*)? ('Then' Event=usEvent)?;
 	public UsElements getUsAccess() {
 		return pUs;
 	}
@@ -518,6 +538,7 @@ public class UserStoryGrammarAccess extends AbstractElementFinder.AbstractGramma
 	
 	//usTask:
 	//	id=INT
+	//	ref=INT?
 	//	name=STRING;
 	public UsTaskElements getUsTaskAccess() {
 		return pUsTask;
@@ -529,6 +550,7 @@ public class UserStoryGrammarAccess extends AbstractElementFinder.AbstractGramma
 	
 	//usEvent:
 	//	id=INT
+	//	ref=INT?
 	//	name=STRING
 	//	type=INT;
 	public UsEventElements getUsEventAccess() {

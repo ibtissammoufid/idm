@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.example.org/bpmn" xmlns:userStory="http://www.xtext.org/example/userstory/UserStory" xsi:schemaLocation="http://www.example.org/bpmn ../../ma.ensias.bpmn/model/bpmn.ecore http://www.xtext.org/example/userstory/UserStory generated/UserStory.ecore">
+  <userStory:Backlog name="back">
+    <backlog id="1">
+      <role name="customer"/>
+      <activity xsi:type="userStory:usTask" id="100" name="start"/>
+    </backlog>
+    <backlog id="2">
+      <role name="customer"/>
+      <activity xsi:type="userStory:usTask" id="101" ref="5" name="selectTravel"/>
+    </backlog>
+    <backlog id="3">
+      <role name="customer"/>
+      <activity xsi:type="userStory:usTask" id="102" name="confirmInterest"/>
+    </backlog>
+    <backlog id="4">
+      <role name="customer"/>
+      <activity xsi:type="userStory:usTask" id="103" name="end"/>
+    </backlog>
+    <backlog id="5" otherActivity="/0/@backlog.1/@activity">
+      <role name="organization"/>
+      <activity xsi:type="userStory:usTask" id="200" ref="6" name="start"/>
+    </backlog>
+    <backlog id="6">
+      <role name="organization"/>
+      <activity xsi:type="userStory:usTask" id="201" name="indicate price"/>
+    </backlog>
+    <backlog id="7">
+      <role name="organization"/>
+      <activity xsi:type="userStory:usTask" id="202" name="end"/>
+    </backlog>
+  </userStory:Backlog>
+  <bpmn:Process name="back">
+    <pool name="organization">
+      <activity xsi:type="bpmn:Task" id="202" name="end"/>
+      <activity xsi:type="bpmn:Task" id="201" name="indicate price" from="/1/@pool.0/@flowobject.1"/>
+      <activity xsi:type="bpmn:Task" id="200" name="start" from="/1/@pool.0/@flowobject.0" order="5"/>
+      <flowobject xsi:type="bpmn:SequenceFlow" name="200 to 201" to="/1/@pool.0/@activity.1"/>
+      <flowobject xsi:type="bpmn:SequenceFlow" name="201 to 202" to="/1/@pool.0/@activity.0"/>
+      <flowobject xsi:type="bpmn:MessageFlow" id="200" name="101 to 200" toactivity="/1/@pool.0/@activity.2"/>
+    </pool>
+    <pool name="customer">
+      <activity xsi:type="bpmn:Task" id="103" name="end"/>
+      <activity xsi:type="bpmn:Task" id="102" name="confirmInterest" from="/1/@pool.1/@flowobject.2"/>
+      <activity xsi:type="bpmn:Task" id="101" name="selectTravel" from="/1/@pool.1/@flowobject.1" frommessageflow="/1/@pool.0/@flowobject.2" order="5"/>
+      <activity xsi:type="bpmn:Task" id="100" name="start" from="/1/@pool.1/@flowobject.0"/>
+      <flowobject xsi:type="bpmn:SequenceFlow" name="100 to 101" to="/1/@pool.1/@activity.2"/>
+      <flowobject xsi:type="bpmn:SequenceFlow" name="101 to 102" to="/1/@pool.1/@activity.1"/>
+      <flowobject xsi:type="bpmn:SequenceFlow" name="102 to 103" to="/1/@pool.1/@activity.0"/>
+    </pool>
+  </bpmn:Process>
+</xmi:XMI>

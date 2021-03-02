@@ -5,6 +5,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="pool" upperBound="-1" eType="#//Pool"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SousProcess" eSuperTypes="#//DataObject"/>
   <eClassifiers xsi:type="ecore:EClass" name="GateWay" abstract="true" eSuperTypes="#//Activity"/>
   <eClassifiers xsi:type="ecore:EClass" name="SubProcess" eSuperTypes="#//Process">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Ref_SubProcess" upperBound="-1"
@@ -14,9 +15,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="from" upperBound="-1" eType="#//SequenceFlow"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="frommessageflow" upperBound="-1"
         eType="#//MessageFlow"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="order" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Artifacts" eSuperTypes="#//Object">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ArtifactType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ArtifactType"
+        defaultValueLiteral="DataObject"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Pool" eSuperTypes="#//Object">
     <eStructuralFeatures xsi:type="ecore:EReference" name="activity" lowerBound="1"
@@ -26,8 +29,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FlowObject" abstract="true" eSuperTypes="#//Object"/>
   <eClassifiers xsi:type="ecore:EClass" name="Object" abstract="true" interface="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Event" eSuperTypes="#//Activity">

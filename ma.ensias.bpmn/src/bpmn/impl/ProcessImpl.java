@@ -5,6 +5,7 @@ package bpmn.impl;
 import bpmn.BpmnPackage;
 import bpmn.Pool;
 
+import bpmn.SousProcess;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -32,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link bpmn.impl.ProcessImpl#getId <em>Id</em>}</li>
  *   <li>{@link bpmn.impl.ProcessImpl#getName <em>Name</em>}</li>
  *   <li>{@link bpmn.impl.ProcessImpl#getPool <em>Pool</em>}</li>
+ *   <li>{@link bpmn.impl.ProcessImpl#getSubprocess <em>Subprocess</em>}</li>
  * </ul>
  *
  * @generated
@@ -86,6 +88,16 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements bpmn.Pr
 	 * @ordered
 	 */
 	protected EList<Pool> pool;
+
+	/**
+	 * The cached value of the '{@link #getSubprocess() <em>Subprocess</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSubprocess()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SousProcess> subprocess;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -165,11 +177,25 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements bpmn.Pr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<SousProcess> getSubprocess() {
+		if (subprocess == null) {
+			subprocess = new EObjectContainmentEList<SousProcess>(SousProcess.class, this, BpmnPackage.PROCESS__SUBPROCESS);
+		}
+		return subprocess;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case BpmnPackage.PROCESS__POOL:
 				return ((InternalEList<?>)getPool()).basicRemove(otherEnd, msgs);
+			case BpmnPackage.PROCESS__SUBPROCESS:
+				return ((InternalEList<?>)getSubprocess()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -188,6 +214,8 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements bpmn.Pr
 				return getName();
 			case BpmnPackage.PROCESS__POOL:
 				return getPool();
+			case BpmnPackage.PROCESS__SUBPROCESS:
+				return getSubprocess();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -211,6 +239,10 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements bpmn.Pr
 				getPool().clear();
 				getPool().addAll((Collection<? extends Pool>)newValue);
 				return;
+			case BpmnPackage.PROCESS__SUBPROCESS:
+				getSubprocess().clear();
+				getSubprocess().addAll((Collection<? extends SousProcess>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -232,6 +264,9 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements bpmn.Pr
 			case BpmnPackage.PROCESS__POOL:
 				getPool().clear();
 				return;
+			case BpmnPackage.PROCESS__SUBPROCESS:
+				getSubprocess().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -250,6 +285,8 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements bpmn.Pr
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case BpmnPackage.PROCESS__POOL:
 				return pool != null && !pool.isEmpty();
+			case BpmnPackage.PROCESS__SUBPROCESS:
+				return subprocess != null && !subprocess.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

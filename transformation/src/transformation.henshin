@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_R-kSIHOvEeuQyrBB70sxww">
-  <imports href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#/"/>
   <imports href="../../ma.ensias.bpmn/model/bpmn.ecore#/"/>
+  <imports href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#/"/>
   <units xsi:type="henshin:Rule" xmi:id="_BxhUYHOyEeuY2qotRfvPgQ" name="CreateProcess">
     <parameters xmi:id="_ZL1pwHOyEeuY2qotRfvPgQ" name="ProcessName">
       <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -47,11 +47,17 @@
       <nodes xmi:id="_X5-qMHO7EeuY2qotRfvPgQ">
         <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Process"/>
       </nodes>
-      <nodes xmi:id="_4PFT0HO8EeuY2qotRfvPgQ" outgoing="_7YbDUHO8EeuY2qotRfvPgQ">
+      <nodes xmi:id="_4PFT0HO8EeuY2qotRfvPgQ" incoming="_ArJ30HTnEeu4YtknOXmv0w" outgoing="_7YbDUHO8EeuY2qotRfvPgQ">
         <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Us"/>
+      </nodes>
+      <nodes xmi:id="__lHc0HTmEeu4YtknOXmv0w" outgoing="_ArJ30HTnEeu4YtknOXmv0w">
+        <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Backlog"/>
       </nodes>
       <edges xmi:id="_7YbDUHO8EeuY2qotRfvPgQ" source="_4PFT0HO8EeuY2qotRfvPgQ" target="_bmhRkHO0EeuY2qotRfvPgQ">
         <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Us/role"/>
+      </edges>
+      <edges xmi:id="_ArJ30HTnEeu4YtknOXmv0w" source="__lHc0HTmEeu4YtknOXmv0w" target="_4PFT0HO8EeuY2qotRfvPgQ">
+        <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Backlog/backlog"/>
       </edges>
       <formula xsi:type="henshin:Not" xmi:id="_5fj5sHO7EeuY2qotRfvPgQ">
         <child xsi:type="henshin:NestedCondition" xmi:id="_5fj5sXO7EeuY2qotRfvPgQ">
@@ -62,18 +68,15 @@
                 <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Role/name"/>
               </attributes>
             </nodes>
-            <nodes xmi:id="_5fj5tnO7EeuY2qotRfvPgQ" outgoing="_37PnQHO7EeuY2qotRfvPgQ">
+            <nodes xmi:id="_5fj5tnO7EeuY2qotRfvPgQ">
               <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Process"/>
             </nodes>
-            <nodes xmi:id="_9hqPcHO2EeuY2qotRfvPgQ" name="" incoming="_37PnQHO7EeuY2qotRfvPgQ">
+            <nodes xmi:id="_9hqPcHO2EeuY2qotRfvPgQ" name="">
               <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Pool"/>
               <attributes xmi:id="_DsLQ8HO3EeuY2qotRfvPgQ" value="PoolName">
                 <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Object/name"/>
               </attributes>
             </nodes>
-            <edges xmi:id="_37PnQHO7EeuY2qotRfvPgQ" source="_5fj5tnO7EeuY2qotRfvPgQ" target="_9hqPcHO2EeuY2qotRfvPgQ">
-              <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Process/pool"/>
-            </edges>
           </conclusion>
           <mappings xmi:id="_5fj5tXO7EeuY2qotRfvPgQ" origin="_bmhRkHO0EeuY2qotRfvPgQ" image="_5fj5s3O7EeuY2qotRfvPgQ"/>
           <mappings xmi:id="_5fj5t3O7EeuY2qotRfvPgQ" origin="_X5-qMHO7EeuY2qotRfvPgQ" image="_5fj5tnO7EeuY2qotRfvPgQ"/>
@@ -96,8 +99,11 @@
       <nodes xmi:id="_X5-qMXO7EeuY2qotRfvPgQ" outgoing="_qYKcwHO7EeuY2qotRfvPgQ">
         <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Process"/>
       </nodes>
-      <nodes xmi:id="_4PF64HO8EeuY2qotRfvPgQ" outgoing="_7YbDUXO8EeuY2qotRfvPgQ">
+      <nodes xmi:id="_4PF64HO8EeuY2qotRfvPgQ" incoming="_ArJ30XTnEeu4YtknOXmv0w" outgoing="_7YbDUXO8EeuY2qotRfvPgQ">
         <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Us"/>
+      </nodes>
+      <nodes xmi:id="__lJ5EHTmEeu4YtknOXmv0w" outgoing="_ArJ30XTnEeu4YtknOXmv0w">
+        <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Backlog"/>
       </nodes>
       <edges xmi:id="_qYKcwHO7EeuY2qotRfvPgQ" source="_X5-qMXO7EeuY2qotRfvPgQ" target="_Z4ELsHO0EeuY2qotRfvPgQ">
         <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Process/pool"/>
@@ -105,10 +111,14 @@
       <edges xmi:id="_7YbDUXO8EeuY2qotRfvPgQ" source="_4PF64HO8EeuY2qotRfvPgQ" target="_bmhRkXO0EeuY2qotRfvPgQ">
         <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Us/role"/>
       </edges>
+      <edges xmi:id="_ArJ30XTnEeu4YtknOXmv0w" source="__lJ5EHTmEeu4YtknOXmv0w" target="_4PF64HO8EeuY2qotRfvPgQ">
+        <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Backlog/backlog"/>
+      </edges>
     </rhs>
     <mappings xmi:id="_bmhRknO0EeuY2qotRfvPgQ" origin="_bmhRkHO0EeuY2qotRfvPgQ" image="_bmhRkXO0EeuY2qotRfvPgQ"/>
     <mappings xmi:id="_X5_RQHO7EeuY2qotRfvPgQ" origin="_X5-qMHO7EeuY2qotRfvPgQ" image="_X5-qMXO7EeuY2qotRfvPgQ"/>
     <mappings xmi:id="_4PF64XO8EeuY2qotRfvPgQ" origin="_4PFT0HO8EeuY2qotRfvPgQ" image="_4PF64HO8EeuY2qotRfvPgQ"/>
+    <mappings xmi:id="__lJ5EXTmEeu4YtknOXmv0w" origin="__lHc0HTmEeu4YtknOXmv0w" image="__lJ5EHTmEeu4YtknOXmv0w"/>
   </units>
   <units xsi:type="henshin:Rule" xmi:id="_4CJ7AHPQEeuY2qotRfvPgQ" name="CreateTask">
     <parameters xmi:id="_B7CEoHPREeuY2qotRfvPgQ" name="taskname">
@@ -117,8 +127,11 @@
     <parameters xmi:id="_U0T2UHRWEeuxk8PMaUrsfQ" name="id">
       <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </parameters>
-    <parameters xmi:id="_w4SecHRWEeuxk8PMaUrsfQ" name="poolName">
+    <parameters xmi:id="_7hRhMHn6Eeu-JtP6L3MWDQ" name="poolname">
       <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_aaLp4HoNEeuqnYYV4g2Mlw" name="ref">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </parameters>
     <lhs xmi:id="_4CKiEHPQEeuY2qotRfvPgQ" name="Lhs">
       <nodes xmi:id="_NDYSEHPREeuY2qotRfvPgQ" name="task" incoming="_h1tcEHPSEeuY2qotRfvPgQ">
@@ -126,28 +139,76 @@
         <attributes xmi:id="_SOuVkHPREeuY2qotRfvPgQ" value="taskname">
           <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usActivity/name"/>
         </attributes>
+        <attributes xmi:id="_ZWbakHTuEeu4YtknOXmv0w" value="id">
+          <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usActivity/id"/>
+        </attributes>
+        <attributes xmi:id="_jNtVAHoNEeuqnYYV4g2Mlw" value="ref">
+          <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usActivity/ref"/>
+        </attributes>
       </nodes>
-      <nodes xmi:id="_M2B9IHPSEeuY2qotRfvPgQ" outgoing="_h1tcEHPSEeuY2qotRfvPgQ _L8C_sHRXEeuxk8PMaUrsfQ">
+      <nodes xmi:id="_M2B9IHPSEeuY2qotRfvPgQ" outgoing="_h1tcEHPSEeuY2qotRfvPgQ _Ss1B0Hn7Eeu-JtP6L3MWDQ">
         <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Us"/>
       </nodes>
       <nodes xmi:id="_YGchcHPSEeuY2qotRfvPgQ">
         <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Pool"/>
-        <attributes xmi:id="__sR3MHRWEeuxk8PMaUrsfQ" value="poolName">
+        <attributes xmi:id="_dRLKUHn7Eeu-JtP6L3MWDQ" value="poolname">
           <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Object/name"/>
         </attributes>
       </nodes>
-      <nodes xmi:id="_ICf7QHRXEeuxk8PMaUrsfQ" incoming="_L8C_sHRXEeuxk8PMaUrsfQ">
+      <nodes xmi:id="_RR4t0Hn7Eeu-JtP6L3MWDQ" incoming="_Ss1B0Hn7Eeu-JtP6L3MWDQ">
         <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Role"/>
-        <attributes xmi:id="_RPjgsHRXEeuxk8PMaUrsfQ" value="poolName">
+        <attributes xmi:id="_btRHkHn7Eeu-JtP6L3MWDQ" value="poolname">
           <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Role/name"/>
         </attributes>
       </nodes>
       <edges xmi:id="_h1tcEHPSEeuY2qotRfvPgQ" source="_M2B9IHPSEeuY2qotRfvPgQ" target="_NDYSEHPREeuY2qotRfvPgQ">
         <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Us/activity"/>
       </edges>
-      <edges xmi:id="_L8C_sHRXEeuxk8PMaUrsfQ" source="_M2B9IHPSEeuY2qotRfvPgQ" target="_ICf7QHRXEeuxk8PMaUrsfQ">
+      <edges xmi:id="_Ss1B0Hn7Eeu-JtP6L3MWDQ" source="_M2B9IHPSEeuY2qotRfvPgQ" target="_RR4t0Hn7Eeu-JtP6L3MWDQ">
         <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Us/role"/>
       </edges>
+      <formula xsi:type="henshin:Not" xmi:id="_AA78gnTvEeu4YtknOXmv0w">
+        <child xsi:type="henshin:NestedCondition" xmi:id="_AA78g3TvEeu4YtknOXmv0w">
+          <conclusion xmi:id="_AA78hHTvEeu4YtknOXmv0w">
+            <nodes xmi:id="_AA78hXTvEeu4YtknOXmv0w" name="task" incoming="_AA78i3TvEeu4YtknOXmv0w">
+              <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usTask"/>
+              <attributes xmi:id="_AA78hnTvEeu4YtknOXmv0w" value="taskname">
+                <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usActivity/name"/>
+              </attributes>
+              <attributes xmi:id="_AA78h3TvEeu4YtknOXmv0w" value="id">
+                <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usActivity/id"/>
+              </attributes>
+              <attributes xmi:id="_jNt8EHoNEeuqnYYV4g2Mlw" value="ref">
+                <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usActivity/ref"/>
+              </attributes>
+            </nodes>
+            <nodes xmi:id="_AA78iXTvEeu4YtknOXmv0w" outgoing="_AA78i3TvEeu4YtknOXmv0w">
+              <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Us"/>
+            </nodes>
+            <nodes xmi:id="_AA78jHTvEeu4YtknOXmv0w" outgoing="_CfRAIHTvEeu4YtknOXmv0w">
+              <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Pool"/>
+              <attributes xmi:id="_dRLKUnn7Eeu-JtP6L3MWDQ" value="poolname">
+                <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Object/name"/>
+              </attributes>
+            </nodes>
+            <nodes xmi:id="_AA6uYHTvEeu4YtknOXmv0w" incoming="_CfRAIHTvEeu4YtknOXmv0w">
+              <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Task"/>
+              <attributes xmi:id="_B6Mc0HTyEeu4YtknOXmv0w" value="id">
+                <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Object/id"/>
+              </attributes>
+            </nodes>
+            <edges xmi:id="_AA78i3TvEeu4YtknOXmv0w" source="_AA78iXTvEeu4YtknOXmv0w" target="_AA78hXTvEeu4YtknOXmv0w">
+              <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Us/activity"/>
+            </edges>
+            <edges xmi:id="_CfRAIHTvEeu4YtknOXmv0w" source="_AA78jHTvEeu4YtknOXmv0w" target="_AA6uYHTvEeu4YtknOXmv0w">
+              <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Pool/activity"/>
+            </edges>
+          </conclusion>
+          <mappings xmi:id="_AA78iHTvEeu4YtknOXmv0w" origin="_NDYSEHPREeuY2qotRfvPgQ" image="_AA78hXTvEeu4YtknOXmv0w"/>
+          <mappings xmi:id="_AA78inTvEeu4YtknOXmv0w" origin="_M2B9IHPSEeuY2qotRfvPgQ" image="_AA78iXTvEeu4YtknOXmv0w"/>
+          <mappings xmi:id="_AA78jXTvEeu4YtknOXmv0w" origin="_YGchcHPSEeuY2qotRfvPgQ" image="_AA78jHTvEeu4YtknOXmv0w"/>
+        </child>
+      </formula>
     </lhs>
     <rhs xmi:id="_4CKiEXPQEeuY2qotRfvPgQ" name="Rhs">
       <nodes xmi:id="_NDauUHPREeuY2qotRfvPgQ" incoming="_h1tcEXPSEeuY2qotRfvPgQ">
@@ -155,8 +216,11 @@
         <attributes xmi:id="_SOuVkXPREeuY2qotRfvPgQ" value="taskname">
           <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usActivity/name"/>
         </attributes>
-        <attributes xmi:id="_dKJf4HRWEeuxk8PMaUrsfQ" value="id">
+        <attributes xmi:id="_ZWdPwHTuEeu4YtknOXmv0w" value="id">
           <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usActivity/id"/>
+        </attributes>
+        <attributes xmi:id="_jNtVAXoNEeuqnYYV4g2Mlw" value="ref">
+          <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usActivity/ref"/>
         </attributes>
       </nodes>
       <nodes xmi:id="_PPMCUHPREeuY2qotRfvPgQ" name="" incoming="_knsbgHPSEeuY2qotRfvPgQ">
@@ -164,22 +228,25 @@
         <attributes xmi:id="_S2CNMHPREeuY2qotRfvPgQ" value="taskname">
           <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Object/name"/>
         </attributes>
-        <attributes xmi:id="_VMDpYHPREeuY2qotRfvPgQ" value="id">
+        <attributes xmi:id="_A7KowHTyEeu4YtknOXmv0w" value="id">
           <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Object/id"/>
         </attributes>
+        <attributes xmi:id="_hrbC4HoNEeuqnYYV4g2Mlw" value="ref">
+          <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Activity/order"/>
+        </attributes>
       </nodes>
-      <nodes xmi:id="_M2CkMHPSEeuY2qotRfvPgQ" outgoing="_h1tcEXPSEeuY2qotRfvPgQ _L8C_sXRXEeuxk8PMaUrsfQ">
+      <nodes xmi:id="_M2CkMHPSEeuY2qotRfvPgQ" outgoing="_h1tcEXPSEeuY2qotRfvPgQ _Ss1B0Xn7Eeu-JtP6L3MWDQ">
         <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Us"/>
       </nodes>
       <nodes xmi:id="_YGchcXPSEeuY2qotRfvPgQ" outgoing="_knsbgHPSEeuY2qotRfvPgQ">
         <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Pool"/>
-        <attributes xmi:id="__sUTcHRWEeuxk8PMaUrsfQ" value="poolName">
+        <attributes xmi:id="_dRLKUXn7Eeu-JtP6L3MWDQ" value="poolname">
           <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Object/name"/>
         </attributes>
       </nodes>
-      <nodes xmi:id="_ICf7QXRXEeuxk8PMaUrsfQ" incoming="_L8C_sXRXEeuxk8PMaUrsfQ">
+      <nodes xmi:id="_SFvzsHn7Eeu-JtP6L3MWDQ" incoming="_Ss1B0Xn7Eeu-JtP6L3MWDQ">
         <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Role"/>
-        <attributes xmi:id="_RPjgsXRXEeuxk8PMaUrsfQ" value="poolName">
+        <attributes xmi:id="_btRuoHn7Eeu-JtP6L3MWDQ" value="poolname">
           <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Role/name"/>
         </attributes>
       </nodes>
@@ -189,23 +256,29 @@
       <edges xmi:id="_knsbgHPSEeuY2qotRfvPgQ" source="_YGchcXPSEeuY2qotRfvPgQ" target="_PPMCUHPREeuY2qotRfvPgQ">
         <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Pool/activity"/>
       </edges>
-      <edges xmi:id="_L8C_sXRXEeuxk8PMaUrsfQ" source="_M2CkMHPSEeuY2qotRfvPgQ" target="_ICf7QXRXEeuxk8PMaUrsfQ">
+      <edges xmi:id="_Ss1B0Xn7Eeu-JtP6L3MWDQ" source="_M2CkMHPSEeuY2qotRfvPgQ" target="_SFvzsHn7Eeu-JtP6L3MWDQ">
         <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Us/role"/>
       </edges>
     </rhs>
     <mappings xmi:id="_NDauUXPREeuY2qotRfvPgQ" origin="_NDYSEHPREeuY2qotRfvPgQ" image="_NDauUHPREeuY2qotRfvPgQ"/>
     <mappings xmi:id="_M2CkMXPSEeuY2qotRfvPgQ" origin="_M2B9IHPSEeuY2qotRfvPgQ" image="_M2CkMHPSEeuY2qotRfvPgQ"/>
     <mappings xmi:id="_YGchcnPSEeuY2qotRfvPgQ" origin="_YGchcHPSEeuY2qotRfvPgQ" image="_YGchcXPSEeuY2qotRfvPgQ"/>
-    <mappings xmi:id="_ICf7QnRXEeuxk8PMaUrsfQ" origin="_ICf7QHRXEeuxk8PMaUrsfQ" image="_ICf7QXRXEeuxk8PMaUrsfQ"/>
+    <mappings xmi:id="_SFvzsXn7Eeu-JtP6L3MWDQ" origin="_RR4t0Hn7Eeu-JtP6L3MWDQ" image="_SFvzsHn7Eeu-JtP6L3MWDQ"/>
   </units>
   <units xsi:type="henshin:Rule" xmi:id="_wHKIcHPSEeuY2qotRfvPgQ" name="CreateEvent">
     <parameters xmi:id="_4I-CwHPSEeuY2qotRfvPgQ" name="eventname">
       <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </parameters>
-    <parameters xmi:id="_OMldIHSSEeuXCPaMIzcGpA" name="poolName">
+    <parameters xmi:id="_HdkCIHn9Eeu-JtP6L3MWDQ" name="poolname">
       <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </parameters>
-    <parameters xmi:id="_Z8FKIHSSEeuXCPaMIzcGpA" name="type">
+    <parameters xmi:id="_ffcTgHoNEeuqnYYV4g2Mlw" name="ref">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </parameters>
+    <parameters xmi:id="_oxQ9kHqkEeu8xONudWWWrw" name="id">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </parameters>
+    <parameters xmi:id="_rcmicHqkEeu8xONudWWWrw" name="eventtype">
       <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </parameters>
     <lhs xmi:id="_wHLWkHPSEeuY2qotRfvPgQ" name="Lhs">
@@ -214,31 +287,82 @@
         <attributes xmi:id="_EPyDkHPTEeuY2qotRfvPgQ" value="eventname">
           <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usActivity/name"/>
         </attributes>
-        <attributes xmi:id="_HnUnIHPTEeuY2qotRfvPgQ" value="">
+        <attributes xmi:id="_m9QI4HoNEeuqnYYV4g2Mlw" value="ref">
+          <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usActivity/ref"/>
+        </attributes>
+        <attributes xmi:id="_Kb33AHqlEeu8xONudWWWrw" value="id">
+          <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usActivity/id"/>
+        </attributes>
+        <attributes xmi:id="_MVAi4HqlEeu8xONudWWWrw" value="eventtype">
           <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usEvent/type"/>
         </attributes>
       </nodes>
       <nodes xmi:id="_NlJQcHPTEeuY2qotRfvPgQ">
         <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Pool"/>
-        <attributes xmi:id="_spaocHSREeuXCPaMIzcGpA" value="poolName">
+        <attributes xmi:id="_NzqokHn9Eeu-JtP6L3MWDQ" value="poolname">
           <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Object/name"/>
         </attributes>
       </nodes>
-      <nodes xmi:id="_R1nnIHPTEeuY2qotRfvPgQ" outgoing="_Wr-SEHPTEeuY2qotRfvPgQ _4L7OsHRXEeuxk8PMaUrsfQ">
+      <nodes xmi:id="_R1nnIHPTEeuY2qotRfvPgQ" outgoing="_Wr-SEHPTEeuY2qotRfvPgQ _DS5_kHn9Eeu-JtP6L3MWDQ">
         <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Us"/>
       </nodes>
-      <nodes xmi:id="_3gLjAHRXEeuxk8PMaUrsfQ" incoming="_4L7OsHRXEeuxk8PMaUrsfQ">
+      <nodes xmi:id="_ByjAEHn9Eeu-JtP6L3MWDQ" incoming="_DS5_kHn9Eeu-JtP6L3MWDQ">
         <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Role"/>
-        <attributes xmi:id="_5OHrgHRXEeuxk8PMaUrsfQ" value="poolName">
+        <attributes xmi:id="_LUAIMHn9Eeu-JtP6L3MWDQ" value="poolname">
           <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Role/name"/>
         </attributes>
       </nodes>
       <edges xmi:id="_Wr-SEHPTEeuY2qotRfvPgQ" source="_R1nnIHPTEeuY2qotRfvPgQ" target="_-imeUHPSEeuY2qotRfvPgQ">
         <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Us/Event"/>
       </edges>
-      <edges xmi:id="_4L7OsHRXEeuxk8PMaUrsfQ" source="_R1nnIHPTEeuY2qotRfvPgQ" target="_3gLjAHRXEeuxk8PMaUrsfQ">
+      <edges xmi:id="_DS5_kHn9Eeu-JtP6L3MWDQ" source="_R1nnIHPTEeuY2qotRfvPgQ" target="_ByjAEHn9Eeu-JtP6L3MWDQ">
         <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Us/role"/>
       </edges>
+      <formula xsi:type="henshin:Not" xmi:id="_8CUt4Hn8Eeu-JtP6L3MWDQ">
+        <child xsi:type="henshin:NestedCondition" xmi:id="_8CUt4Xn8Eeu-JtP6L3MWDQ">
+          <conclusion xmi:id="_8CUt4nn8Eeu-JtP6L3MWDQ">
+            <nodes xmi:id="_8CVU8Hn8Eeu-JtP6L3MWDQ" incoming="_8CVU9Xn8Eeu-JtP6L3MWDQ">
+              <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usEvent"/>
+              <attributes xmi:id="_8CVU8Xn8Eeu-JtP6L3MWDQ" value="eventname">
+                <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usActivity/name"/>
+              </attributes>
+              <attributes xmi:id="_m9QI4noNEeuqnYYV4g2Mlw" value="ref">
+                <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usActivity/ref"/>
+              </attributes>
+              <attributes xmi:id="_Kb66UXqlEeu8xONudWWWrw" value="id">
+                <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usActivity/id"/>
+              </attributes>
+              <attributes xmi:id="_MVAi4nqlEeu8xONudWWWrw" value="eventtype">
+                <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usEvent/type"/>
+              </attributes>
+            </nodes>
+            <nodes xmi:id="_8CVU83n8Eeu-JtP6L3MWDQ" outgoing="_8CVU9Xn8Eeu-JtP6L3MWDQ">
+              <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Us"/>
+            </nodes>
+            <nodes xmi:id="_8CVU9nn8Eeu-JtP6L3MWDQ" outgoing="_3TxUEHn8Eeu-JtP6L3MWDQ">
+              <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Pool"/>
+              <attributes xmi:id="_NztE0Xn9Eeu-JtP6L3MWDQ" value="poolname">
+                <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Object/name"/>
+              </attributes>
+            </nodes>
+            <nodes xmi:id="_2QFpgHn8Eeu-JtP6L3MWDQ" incoming="_3TxUEHn8Eeu-JtP6L3MWDQ">
+              <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Event"/>
+              <attributes xmi:id="_nWkrwHqlEeu8xONudWWWrw" value="id">
+                <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Object/id"/>
+              </attributes>
+            </nodes>
+            <edges xmi:id="_8CVU9Xn8Eeu-JtP6L3MWDQ" source="_8CVU83n8Eeu-JtP6L3MWDQ" target="_8CVU8Hn8Eeu-JtP6L3MWDQ">
+              <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Us/Event"/>
+            </edges>
+            <edges xmi:id="_3TxUEHn8Eeu-JtP6L3MWDQ" source="_8CVU9nn8Eeu-JtP6L3MWDQ" target="_2QFpgHn8Eeu-JtP6L3MWDQ">
+              <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Pool/activity"/>
+            </edges>
+          </conclusion>
+          <mappings xmi:id="_8CVU8nn8Eeu-JtP6L3MWDQ" origin="_-imeUHPSEeuY2qotRfvPgQ" image="_8CVU8Hn8Eeu-JtP6L3MWDQ"/>
+          <mappings xmi:id="_8CVU9Hn8Eeu-JtP6L3MWDQ" origin="_R1nnIHPTEeuY2qotRfvPgQ" image="_8CVU83n8Eeu-JtP6L3MWDQ"/>
+          <mappings xmi:id="_8CVU93n8Eeu-JtP6L3MWDQ" origin="_NlJQcHPTEeuY2qotRfvPgQ" image="_8CVU9nn8Eeu-JtP6L3MWDQ"/>
+        </child>
+      </formula>
     </lhs>
     <rhs xmi:id="_wHLWkXPSEeuY2qotRfvPgQ" name="Rhs">
       <nodes xmi:id="_-ioTgHPSEeuY2qotRfvPgQ" incoming="_Wr-SEXPTEeuY2qotRfvPgQ">
@@ -246,7 +370,13 @@
         <attributes xmi:id="_EPyDkXPTEeuY2qotRfvPgQ" value="eventname">
           <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usActivity/name"/>
         </attributes>
-        <attributes xmi:id="_HnUnIXPTEeuY2qotRfvPgQ" value="eventname">
+        <attributes xmi:id="_m9QI4XoNEeuqnYYV4g2Mlw" value="ref">
+          <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usActivity/ref"/>
+        </attributes>
+        <attributes xmi:id="_Kb66UHqlEeu8xONudWWWrw" value="id">
+          <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usActivity/id"/>
+        </attributes>
+        <attributes xmi:id="_MVAi4XqlEeu8xONudWWWrw" value="eventtype">
           <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usEvent/type"/>
         </attributes>
       </nodes>
@@ -255,22 +385,28 @@
         <attributes xmi:id="_E_2OkHPTEeuY2qotRfvPgQ" value="eventname">
           <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Object/name"/>
         </attributes>
-        <attributes xmi:id="_23AhAHSVEeu2Jq8MG4y7iQ" value="1">
+        <attributes xmi:id="_mLq68HoNEeuqnYYV4g2Mlw" value="ref">
+          <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Activity/order"/>
+        </attributes>
+        <attributes xmi:id="_JU8rMHqlEeu8xONudWWWrw" value="id">
+          <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Object/id"/>
+        </attributes>
+        <attributes xmi:id="_LtnLsHqlEeu8xONudWWWrw" value="(EventType)eventtype">
           <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Event/type"/>
         </attributes>
       </nodes>
       <nodes xmi:id="_NlJQcXPTEeuY2qotRfvPgQ" outgoing="_X4UwcHPTEeuY2qotRfvPgQ">
         <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Pool"/>
-        <attributes xmi:id="_spbPgHSREeuXCPaMIzcGpA" value="poolName">
+        <attributes xmi:id="_NztE0Hn9Eeu-JtP6L3MWDQ" value="poolname">
           <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Object/name"/>
         </attributes>
       </nodes>
-      <nodes xmi:id="_R1nnIXPTEeuY2qotRfvPgQ" outgoing="_Wr-SEXPTEeuY2qotRfvPgQ _4L7OsXRXEeuxk8PMaUrsfQ">
+      <nodes xmi:id="_R1nnIXPTEeuY2qotRfvPgQ" outgoing="_Wr-SEXPTEeuY2qotRfvPgQ _DS5_kXn9Eeu-JtP6L3MWDQ">
         <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Us"/>
       </nodes>
-      <nodes xmi:id="_3gLjAXRXEeuxk8PMaUrsfQ" incoming="_4L7OsXRXEeuxk8PMaUrsfQ">
+      <nodes xmi:id="_Ci9wYHn9Eeu-JtP6L3MWDQ" incoming="_DS5_kXn9Eeu-JtP6L3MWDQ">
         <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Role"/>
-        <attributes xmi:id="_5OHrgXRXEeuxk8PMaUrsfQ" value="poolName">
+        <attributes xmi:id="_LUCkcHn9Eeu-JtP6L3MWDQ" value="poolname">
           <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Role/name"/>
         </attributes>
       </nodes>
@@ -280,14 +416,14 @@
       <edges xmi:id="_X4UwcHPTEeuY2qotRfvPgQ" source="_NlJQcXPTEeuY2qotRfvPgQ" target="_AirfsHPTEeuY2qotRfvPgQ">
         <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Pool/activity"/>
       </edges>
-      <edges xmi:id="_4L7OsXRXEeuxk8PMaUrsfQ" source="_R1nnIXPTEeuY2qotRfvPgQ" target="_3gLjAXRXEeuxk8PMaUrsfQ">
+      <edges xmi:id="_DS5_kXn9Eeu-JtP6L3MWDQ" source="_R1nnIXPTEeuY2qotRfvPgQ" target="_Ci9wYHn9Eeu-JtP6L3MWDQ">
         <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Us/role"/>
       </edges>
     </rhs>
     <mappings xmi:id="_-ioTgXPSEeuY2qotRfvPgQ" origin="_-imeUHPSEeuY2qotRfvPgQ" image="_-ioTgHPSEeuY2qotRfvPgQ"/>
     <mappings xmi:id="_NlJQcnPTEeuY2qotRfvPgQ" origin="_NlJQcHPTEeuY2qotRfvPgQ" image="_NlJQcXPTEeuY2qotRfvPgQ"/>
     <mappings xmi:id="_R1nnInPTEeuY2qotRfvPgQ" origin="_R1nnIHPTEeuY2qotRfvPgQ" image="_R1nnIXPTEeuY2qotRfvPgQ"/>
-    <mappings xmi:id="_3gLjAnRXEeuxk8PMaUrsfQ" origin="_3gLjAHRXEeuxk8PMaUrsfQ" image="_3gLjAXRXEeuxk8PMaUrsfQ"/>
+    <mappings xmi:id="_Ci9wYXn9Eeu-JtP6L3MWDQ" origin="_ByjAEHn9Eeu-JtP6L3MWDQ" image="_Ci9wYHn9Eeu-JtP6L3MWDQ"/>
   </units>
   <units xsi:type="henshin:Rule" xmi:id="_H97rsHRUEeuxk8PMaUrsfQ" name="CreateSequenceFlow">
     <parameters xmi:id="_IjEKUHRaEeuxk8PMaUrsfQ" name="from">
@@ -299,13 +435,13 @@
     <lhs xmi:id="_H-AkMHRUEeuxk8PMaUrsfQ" name="Lhs">
       <nodes xmi:id="_XENNoHRcEeuxk8PMaUrsfQ" incoming="_t1iQYHRcEeuxk8PMaUrsfQ">
         <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Activity"/>
-        <attributes xmi:id="_b4L6AHRcEeuxk8PMaUrsfQ" value="from">
+        <attributes xmi:id="_uvyA8HTyEeu4YtknOXmv0w" value="from">
           <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Object/id"/>
         </attributes>
       </nodes>
       <nodes xmi:id="_XP-_0HRcEeuxk8PMaUrsfQ" incoming="_h4mkUHRcEeuxk8PMaUrsfQ">
         <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Activity"/>
-        <attributes xmi:id="_dKcMEHRcEeuxk8PMaUrsfQ" value="to">
+        <attributes xmi:id="_vmZf4HTyEeu4YtknOXmv0w" value="to">
           <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Object/id"/>
         </attributes>
       </nodes>
@@ -323,7 +459,7 @@
           <conclusion xmi:id="_8NgbgnRcEeuxk8PMaUrsfQ">
             <nodes xmi:id="_8NhCkHRcEeuxk8PMaUrsfQ" incoming="_8NhClXRcEeuxk8PMaUrsfQ" outgoing="_jWKugHRcEeuxk8PMaUrsfQ">
               <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Activity"/>
-              <attributes xmi:id="_8NhCkXRcEeuxk8PMaUrsfQ" value="from">
+              <attributes xmi:id="_uv0dMXTyEeu4YtknOXmv0w" value="from">
                 <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Object/id"/>
               </attributes>
             </nodes>
@@ -335,7 +471,7 @@
             </nodes>
             <nodes xmi:id="_8NhCmXRcEeuxk8PMaUrsfQ" incoming="_8NhCnHRcEeuxk8PMaUrsfQ _jywj4HRcEeuxk8PMaUrsfQ">
               <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Activity"/>
-              <attributes xmi:id="_8NhCmnRcEeuxk8PMaUrsfQ" value="to">
+              <attributes xmi:id="_vmZf4nTyEeu4YtknOXmv0w" value="to">
                 <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Object/id"/>
               </attributes>
             </nodes>
@@ -359,24 +495,24 @@
       </formula>
     </lhs>
     <rhs xmi:id="_H-BLQHRUEeuxk8PMaUrsfQ" name="Rhs">
-      <nodes xmi:id="_XENNoXRcEeuxk8PMaUrsfQ" incoming="_t1iQYXRcEeuxk8PMaUrsfQ _o8LUwHRcEeuxk8PMaUrsfQ">
+      <nodes xmi:id="_XENNoXRcEeuxk8PMaUrsfQ" incoming="_t1iQYXRcEeuxk8PMaUrsfQ" outgoing="_Fmi9UHTzEeu4YtknOXmv0w">
         <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Activity"/>
-        <attributes xmi:id="_b4L6AXRcEeuxk8PMaUrsfQ" value="from">
+        <attributes xmi:id="_uv0dMHTyEeu4YtknOXmv0w" value="from">
           <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Object/id"/>
         </attributes>
       </nodes>
-      <nodes xmi:id="_XP_m4HRcEeuxk8PMaUrsfQ" incoming="_h4mkUXRcEeuxk8PMaUrsfQ" outgoing="_nHKT4HRcEeuxk8PMaUrsfQ">
+      <nodes xmi:id="_XP_m4HRcEeuxk8PMaUrsfQ" incoming="_h4mkUXRcEeuxk8PMaUrsfQ _Ca45oHTzEeu4YtknOXmv0w">
         <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Activity"/>
-        <attributes xmi:id="_dKcMEXRcEeuxk8PMaUrsfQ" value="to">
+        <attributes xmi:id="_vmZf4XTyEeu4YtknOXmv0w" value="to">
           <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Object/id"/>
         </attributes>
       </nodes>
       <nodes xmi:id="_ZNUPMXRcEeuxk8PMaUrsfQ" outgoing="_h4mkUXRcEeuxk8PMaUrsfQ _t1iQYXRcEeuxk8PMaUrsfQ _hIYBQHRcEeuxk8PMaUrsfQ">
         <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Pool"/>
       </nodes>
-      <nodes xmi:id="_Z7inIHRcEeuxk8PMaUrsfQ" incoming="_hIYBQHRcEeuxk8PMaUrsfQ _nHKT4HRcEeuxk8PMaUrsfQ" outgoing="_o8LUwHRcEeuxk8PMaUrsfQ">
+      <nodes xmi:id="_Z7inIHRcEeuxk8PMaUrsfQ" incoming="_hIYBQHRcEeuxk8PMaUrsfQ _Fmi9UHTzEeu4YtknOXmv0w" outgoing="_Ca45oHTzEeu4YtknOXmv0w">
         <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//SequenceFlow"/>
-        <attributes xmi:id="_xskzYHRcEeuxk8PMaUrsfQ" value="String.valueOf(from)+'to'+String.valueOf(to)">
+        <attributes xmi:id="_xskzYHRcEeuxk8PMaUrsfQ" value="from.toString()+' to '+to.toString()">
           <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Object/name"/>
         </attributes>
       </nodes>
@@ -389,11 +525,11 @@
       <edges xmi:id="_hIYBQHRcEeuxk8PMaUrsfQ" source="_ZNUPMXRcEeuxk8PMaUrsfQ" target="_Z7inIHRcEeuxk8PMaUrsfQ">
         <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Pool/flowobject"/>
       </edges>
-      <edges xmi:id="_nHKT4HRcEeuxk8PMaUrsfQ" source="_XP_m4HRcEeuxk8PMaUrsfQ" target="_Z7inIHRcEeuxk8PMaUrsfQ">
-        <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Activity/from"/>
-      </edges>
-      <edges xmi:id="_o8LUwHRcEeuxk8PMaUrsfQ" source="_Z7inIHRcEeuxk8PMaUrsfQ" target="_XENNoXRcEeuxk8PMaUrsfQ">
+      <edges xmi:id="_Ca45oHTzEeu4YtknOXmv0w" source="_Z7inIHRcEeuxk8PMaUrsfQ" target="_XP_m4HRcEeuxk8PMaUrsfQ">
         <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//SequenceFlow/to"/>
+      </edges>
+      <edges xmi:id="_Fmi9UHTzEeu4YtknOXmv0w" source="_XENNoXRcEeuxk8PMaUrsfQ" target="_Z7inIHRcEeuxk8PMaUrsfQ">
+        <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Activity/from"/>
       </edges>
     </rhs>
     <attributeConditions xmi:id="_J4_UEHRdEeuxk8PMaUrsfQ" name="condition" conditionText="to==from+1"/>
@@ -408,64 +544,56 @@
     <parameters xmi:id="_snSTkHRnEeuxk8PMaUrsfQ" name="to">
       <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </parameters>
+    <parameters xmi:id="_C2Q-gHoLEeuqnYYV4g2Mlw" name="ref"/>
+    <parameters xmi:id="__Y9NUHoOEeuqnYYV4g2Mlw" name="ref1">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </parameters>
     <lhs xmi:id="_0gncwHRmEeuxk8PMaUrsfQ" name="Lhs">
-      <nodes xmi:id="_NkGIUHRnEeuxk8PMaUrsfQ" outgoing="_4xAecHRnEeuxk8PMaUrsfQ _Lq9nAHRoEeuxk8PMaUrsfQ">
+      <nodes xmi:id="_NkGIUHRnEeuxk8PMaUrsfQ" outgoing="_Lq9nAHRoEeuxk8PMaUrsfQ">
         <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Pool"/>
       </nodes>
-      <nodes xmi:id="_Opu6sHRnEeuxk8PMaUrsfQ" incoming="_4xAecHRnEeuxk8PMaUrsfQ">
+      <nodes xmi:id="_Opu6sHRnEeuxk8PMaUrsfQ">
         <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Activity"/>
-        <attributes xmi:id="_3qtkwHRnEeuxk8PMaUrsfQ" value="from">
+        <attributes xmi:id="_akggAHoMEeuqnYYV4g2Mlw" value="ref">
+          <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Activity/order"/>
+        </attributes>
+        <attributes xmi:id="_QFtUsHqiEeu8xONudWWWrw" value="from">
           <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Object/id"/>
         </attributes>
       </nodes>
       <nodes xmi:id="_OyjfgHRnEeuxk8PMaUrsfQ" incoming="_Lq9nAHRoEeuxk8PMaUrsfQ">
         <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Activity"/>
-        <attributes xmi:id="_xbhzwHRpEeuxk8PMaUrsfQ" value="to">
+        <attributes xmi:id="_ZYVn0HoMEeuqnYYV4g2Mlw" value="ref1">
+          <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Activity/order"/>
+        </attributes>
+        <attributes xmi:id="_RxXlQHqiEeu8xONudWWWrw" value="to">
           <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Object/id"/>
         </attributes>
       </nodes>
-      <nodes xmi:id="_PSLTYHRqEeuxk8PMaUrsfQ" outgoing="_cM4PQHRqEeuxk8PMaUrsfQ _cvoXAHRqEeuxk8PMaUrsfQ">
-        <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Us"/>
-      </nodes>
-      <nodes xmi:id="_Rio6IHRqEeuxk8PMaUrsfQ" incoming="_cM4PQHRqEeuxk8PMaUrsfQ">
-        <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usActivity"/>
-        <attributes xmi:id="_ipXxkHRqEeuxk8PMaUrsfQ" value="to">
-          <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usActivity/id"/>
-        </attributes>
-      </nodes>
-      <nodes xmi:id="_R6Qv8HRqEeuxk8PMaUrsfQ" incoming="_cvoXAHRqEeuxk8PMaUrsfQ">
-        <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usActivity"/>
-        <attributes xmi:id="_jNekMHRqEeuxk8PMaUrsfQ" value="from">
-          <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usActivity/id"/>
-        </attributes>
-      </nodes>
-      <edges xmi:id="_4xAecHRnEeuxk8PMaUrsfQ" source="_NkGIUHRnEeuxk8PMaUrsfQ" target="_Opu6sHRnEeuxk8PMaUrsfQ">
-        <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Pool/activity"/>
-      </edges>
       <edges xmi:id="_Lq9nAHRoEeuxk8PMaUrsfQ" source="_NkGIUHRnEeuxk8PMaUrsfQ" target="_OyjfgHRnEeuxk8PMaUrsfQ">
         <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Pool/activity"/>
-      </edges>
-      <edges xmi:id="_cM4PQHRqEeuxk8PMaUrsfQ" source="_PSLTYHRqEeuxk8PMaUrsfQ" target="_Rio6IHRqEeuxk8PMaUrsfQ">
-        <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Us/activity"/>
-      </edges>
-      <edges xmi:id="_cvoXAHRqEeuxk8PMaUrsfQ" source="_PSLTYHRqEeuxk8PMaUrsfQ" target="_R6Qv8HRqEeuxk8PMaUrsfQ">
-        <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Us/activity1"/>
       </edges>
       <formula xsi:type="henshin:Not" xmi:id="_TXTnoHRoEeuxk8PMaUrsfQ">
         <child xsi:type="henshin:NestedCondition" xmi:id="_TXTnoXRoEeuxk8PMaUrsfQ">
           <conclusion xmi:id="_TXTnonRoEeuxk8PMaUrsfQ">
-            <nodes xmi:id="_TXTno3RoEeuxk8PMaUrsfQ" outgoing="_TXTnqHRoEeuxk8PMaUrsfQ _TXUOsnRoEeuxk8PMaUrsfQ">
+            <nodes xmi:id="_TXTno3RoEeuxk8PMaUrsfQ" outgoing="_TXUOsnRoEeuxk8PMaUrsfQ">
               <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Pool"/>
             </nodes>
-            <nodes xmi:id="_TXTnpXRoEeuxk8PMaUrsfQ" incoming="_TXTnqHRoEeuxk8PMaUrsfQ" outgoing="_NEVNsHRoEeuxk8PMaUrsfQ">
+            <nodes xmi:id="_TXTnpXRoEeuxk8PMaUrsfQ" outgoing="_NEVNsHRoEeuxk8PMaUrsfQ">
               <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Activity"/>
-              <attributes xmi:id="_TXTnpnRoEeuxk8PMaUrsfQ" value="from">
+              <attributes xmi:id="_akhHEXoMEeuqnYYV4g2Mlw" value="ref">
+                <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Activity/order"/>
+              </attributes>
+              <attributes xmi:id="_QFt7wXqiEeu8xONudWWWrw" value="from">
                 <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Object/id"/>
               </attributes>
             </nodes>
             <nodes xmi:id="_TXUOsHRoEeuxk8PMaUrsfQ" incoming="_TXUOsnRoEeuxk8PMaUrsfQ _Nj0mEHRoEeuxk8PMaUrsfQ">
               <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Activity"/>
-              <attributes xmi:id="_xbhzwnRpEeuxk8PMaUrsfQ" value="to">
+              <attributes xmi:id="_ZYYEEXoMEeuqnYYV4g2Mlw" value="ref">
+                <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Activity/order"/>
+              </attributes>
+              <attributes xmi:id="_RxXlQnqiEeu8xONudWWWrw" value="to">
                 <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Object/id"/>
               </attributes>
             </nodes>
@@ -475,9 +603,6 @@
                 <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Object/id"/>
               </attributes>
             </nodes>
-            <edges xmi:id="_TXTnqHRoEeuxk8PMaUrsfQ" source="_TXTno3RoEeuxk8PMaUrsfQ" target="_TXTnpXRoEeuxk8PMaUrsfQ">
-              <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Pool/activity"/>
-            </edges>
             <edges xmi:id="_TXUOsnRoEeuxk8PMaUrsfQ" source="_TXTno3RoEeuxk8PMaUrsfQ" target="_TXUOsHRoEeuxk8PMaUrsfQ">
               <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Pool/activity"/>
             </edges>
@@ -495,81 +620,63 @@
       </formula>
     </lhs>
     <rhs xmi:id="_0gncwXRmEeuxk8PMaUrsfQ" name="Rhs">
-      <nodes xmi:id="_NkGIUXRnEeuxk8PMaUrsfQ" outgoing="_4xBFgHRnEeuxk8PMaUrsfQ _Lq9nAXRoEeuxk8PMaUrsfQ _6oyfcHRnEeuxk8PMaUrsfQ">
+      <nodes xmi:id="_NkGIUXRnEeuxk8PMaUrsfQ" outgoing="_Lq9nAXRoEeuxk8PMaUrsfQ _6oyfcHRnEeuxk8PMaUrsfQ">
         <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Pool"/>
       </nodes>
-      <nodes xmi:id="_Opu6sXRnEeuxk8PMaUrsfQ" incoming="_4xBFgHRnEeuxk8PMaUrsfQ _QK5WAHRoEeuxk8PMaUrsfQ">
+      <nodes xmi:id="_Opu6sXRnEeuxk8PMaUrsfQ" outgoing="_fwMDEHn-Eeu-JtP6L3MWDQ">
         <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Activity"/>
-        <attributes xmi:id="_3quL0HRnEeuxk8PMaUrsfQ" value="from">
+        <attributes xmi:id="_akhHEHoMEeuqnYYV4g2Mlw" value="ref">
+          <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Activity/order"/>
+        </attributes>
+        <attributes xmi:id="_QFt7wHqiEeu8xONudWWWrw" value="from">
           <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Object/id"/>
         </attributes>
       </nodes>
-      <nodes xmi:id="_OykGkHRnEeuxk8PMaUrsfQ" incoming="_Lq9nAXRoEeuxk8PMaUrsfQ" outgoing="_O9w0gHRoEeuxk8PMaUrsfQ">
+      <nodes xmi:id="_OykGkHRnEeuxk8PMaUrsfQ" incoming="_Lq9nAXRoEeuxk8PMaUrsfQ _jb0nUHn-Eeu-JtP6L3MWDQ">
         <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Activity"/>
-        <attributes xmi:id="_xbhzwXRpEeuxk8PMaUrsfQ" value="to">
+        <attributes xmi:id="_ZYYEEHoMEeuqnYYV4g2Mlw" value="ref">
+          <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Activity/order"/>
+        </attributes>
+        <attributes xmi:id="_RxXlQXqiEeu8xONudWWWrw" value="to">
           <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Object/id"/>
         </attributes>
       </nodes>
-      <nodes xmi:id="_TWGjMHRnEeuxk8PMaUrsfQ" incoming="_6oyfcHRnEeuxk8PMaUrsfQ _O9w0gHRoEeuxk8PMaUrsfQ" outgoing="_QK5WAHRoEeuxk8PMaUrsfQ">
+      <nodes xmi:id="_TWGjMHRnEeuxk8PMaUrsfQ" incoming="_6oyfcHRnEeuxk8PMaUrsfQ _fwMDEHn-Eeu-JtP6L3MWDQ" outgoing="_jb0nUHn-Eeu-JtP6L3MWDQ">
         <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//MessageFlow"/>
-        <attributes xmi:id="_hQehcHRpEeuxk8PMaUrsfQ" value="String.valueOf(from)+'to'+String.valueOf(to)">
+        <attributes xmi:id="_hQehcHRpEeuxk8PMaUrsfQ" value="from.toString()+' to '+to.toString()">
           <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Object/name"/>
         </attributes>
-      </nodes>
-      <nodes xmi:id="_PSLTYXRqEeuxk8PMaUrsfQ" outgoing="_cM42UHRqEeuxk8PMaUrsfQ _cvoXAXRqEeuxk8PMaUrsfQ">
-        <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Us"/>
-      </nodes>
-      <nodes xmi:id="_Rio6IXRqEeuxk8PMaUrsfQ" incoming="_cM42UHRqEeuxk8PMaUrsfQ">
-        <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usActivity"/>
-        <attributes xmi:id="_ipXxkXRqEeuxk8PMaUrsfQ" value="to">
-          <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usActivity/id"/>
+        <attributes xmi:id="_T-s_gHqiEeu8xONudWWWrw" value="to">
+          <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Object/id"/>
         </attributes>
       </nodes>
-      <nodes xmi:id="_R6Qv8XRqEeuxk8PMaUrsfQ" incoming="_cvoXAXRqEeuxk8PMaUrsfQ">
-        <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usActivity"/>
-        <attributes xmi:id="_jNekMXRqEeuxk8PMaUrsfQ" value="from">
-          <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usActivity/id"/>
-        </attributes>
-      </nodes>
-      <edges xmi:id="_4xBFgHRnEeuxk8PMaUrsfQ" source="_NkGIUXRnEeuxk8PMaUrsfQ" target="_Opu6sXRnEeuxk8PMaUrsfQ">
-        <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Pool/activity"/>
-      </edges>
       <edges xmi:id="_Lq9nAXRoEeuxk8PMaUrsfQ" source="_NkGIUXRnEeuxk8PMaUrsfQ" target="_OykGkHRnEeuxk8PMaUrsfQ">
         <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Pool/activity"/>
       </edges>
       <edges xmi:id="_6oyfcHRnEeuxk8PMaUrsfQ" source="_NkGIUXRnEeuxk8PMaUrsfQ" target="_TWGjMHRnEeuxk8PMaUrsfQ">
         <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Pool/flowobject"/>
       </edges>
-      <edges xmi:id="_O9w0gHRoEeuxk8PMaUrsfQ" source="_OykGkHRnEeuxk8PMaUrsfQ" target="_TWGjMHRnEeuxk8PMaUrsfQ">
+      <edges xmi:id="_fwMDEHn-Eeu-JtP6L3MWDQ" source="_Opu6sXRnEeuxk8PMaUrsfQ" target="_TWGjMHRnEeuxk8PMaUrsfQ">
         <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Activity/frommessageflow"/>
       </edges>
-      <edges xmi:id="_QK5WAHRoEeuxk8PMaUrsfQ" source="_TWGjMHRnEeuxk8PMaUrsfQ" target="_Opu6sXRnEeuxk8PMaUrsfQ">
+      <edges xmi:id="_jb0nUHn-Eeu-JtP6L3MWDQ" source="_TWGjMHRnEeuxk8PMaUrsfQ" target="_OykGkHRnEeuxk8PMaUrsfQ">
         <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//MessageFlow/toactivity"/>
       </edges>
-      <edges xmi:id="_cM42UHRqEeuxk8PMaUrsfQ" source="_PSLTYXRqEeuxk8PMaUrsfQ" target="_Rio6IXRqEeuxk8PMaUrsfQ">
-        <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Us/activity"/>
-      </edges>
-      <edges xmi:id="_cvoXAXRqEeuxk8PMaUrsfQ" source="_PSLTYXRqEeuxk8PMaUrsfQ" target="_R6Qv8XRqEeuxk8PMaUrsfQ">
-        <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//Us/activity1"/>
-      </edges>
     </rhs>
+    <attributeConditions xmi:id="_y1-N4HoOEeuqnYYV4g2Mlw" conditionText="ref1==ref+1"/>
     <mappings xmi:id="_NkGIUnRnEeuxk8PMaUrsfQ" origin="_NkGIUHRnEeuxk8PMaUrsfQ" image="_NkGIUXRnEeuxk8PMaUrsfQ"/>
     <mappings xmi:id="_Opu6snRnEeuxk8PMaUrsfQ" origin="_Opu6sHRnEeuxk8PMaUrsfQ" image="_Opu6sXRnEeuxk8PMaUrsfQ"/>
     <mappings xmi:id="_OykGkXRnEeuxk8PMaUrsfQ" origin="_OyjfgHRnEeuxk8PMaUrsfQ" image="_OykGkHRnEeuxk8PMaUrsfQ"/>
-    <mappings xmi:id="_PSLTYnRqEeuxk8PMaUrsfQ" origin="_PSLTYHRqEeuxk8PMaUrsfQ" image="_PSLTYXRqEeuxk8PMaUrsfQ"/>
-    <mappings xmi:id="_Rio6InRqEeuxk8PMaUrsfQ" origin="_Rio6IHRqEeuxk8PMaUrsfQ" image="_Rio6IXRqEeuxk8PMaUrsfQ"/>
-    <mappings xmi:id="_R6Qv8nRqEeuxk8PMaUrsfQ" origin="_R6Qv8HRqEeuxk8PMaUrsfQ" image="_R6Qv8XRqEeuxk8PMaUrsfQ"/>
   </units>
   <units xsi:type="henshin:Rule" xmi:id="_IkSiQHRuEeuxk8PMaUrsfQ" name="CreateArtifact">
-    <parameters xmi:id="__C2y0HRuEeuxk8PMaUrsfQ" name="name">
-      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <parameters xmi:id="_mtLCEHqoEeu8xONudWWWrw" name="id">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </parameters>
-    <parameters xmi:id="_WQk50HRzEeuxk8PMaUrsfQ" name="type"/>
     <lhs xmi:id="_IkYo4HRuEeuxk8PMaUrsfQ" name="Lhs">
       <nodes xmi:id="_NLpu8HRuEeuxk8PMaUrsfQ" incoming="_aP8rsHRuEeuxk8PMaUrsfQ">
         <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usArtifact"/>
-        <attributes xmi:id="_HSoQoHRvEeuxk8PMaUrsfQ" value="name">
-          <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usArtifact/name"/>
+        <attributes xmi:id="_qu2u0HqoEeu8xONudWWWrw" value="id">
+          <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usArtifact/id"/>
         </attributes>
       </nodes>
       <nodes xmi:id="_PMQ70HRuEeuxk8PMaUrsfQ" outgoing="_aP8rsHRuEeuxk8PMaUrsfQ">
@@ -585,14 +692,14 @@
     <rhs xmi:id="_IkYo4XRuEeuxk8PMaUrsfQ" name="Rhs">
       <nodes xmi:id="_MNrq0HRuEeuxk8PMaUrsfQ" incoming="_YLguwHRuEeuxk8PMaUrsfQ">
         <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Artifacts"/>
-        <attributes xmi:id="_GM6lwHRvEeuxk8PMaUrsfQ" value="name">
-          <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Object/name"/>
+        <attributes xmi:id="_sUf28HqoEeu8xONudWWWrw" value="id">
+          <type href="../../ma.ensias.bpmn/model/bpmn.ecore#//Object/id"/>
         </attributes>
       </nodes>
       <nodes xmi:id="_NLqWAHRuEeuxk8PMaUrsfQ" incoming="_aP8rsXRuEeuxk8PMaUrsfQ">
         <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usArtifact"/>
-        <attributes xmi:id="_HSoQoXRvEeuxk8PMaUrsfQ" value="name">
-          <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usArtifact/name"/>
+        <attributes xmi:id="_qu4kAHqoEeu8xONudWWWrw" value="id">
+          <type href="../../org.xtext.example.userstory/model/generated/UserStory.ecore#//usArtifact/id"/>
         </attributes>
       </nodes>
       <nodes xmi:id="_PMQ70XRuEeuxk8PMaUrsfQ" outgoing="_aP8rsXRuEeuxk8PMaUrsfQ">
@@ -613,10 +720,11 @@
     <mappings xmi:id="_SkajYnRuEeuxk8PMaUrsfQ" origin="_SkajYHRuEeuxk8PMaUrsfQ" image="_SkajYXRuEeuxk8PMaUrsfQ"/>
   </units>
   <units xsi:type="henshin:LoopUnit" xmi:id="_aJ1YcHR1Eeuxk8PMaUrsfQ" name="PoolLoop" subUnit="_7C5OUHOzEeuY2qotRfvPgQ"/>
-  <units xsi:type="henshin:LoopUnit" xmi:id="_i6kOQHR1Eeuxk8PMaUrsfQ" name="TaskLoop" subUnit="_BxhUYHOyEeuY2qotRfvPgQ"/>
+  <units xsi:type="henshin:LoopUnit" xmi:id="_i6kOQHR1Eeuxk8PMaUrsfQ" name="TaskLoop" subUnit="_4CJ7AHPQEeuY2qotRfvPgQ"/>
   <units xsi:type="henshin:LoopUnit" xmi:id="_uPk-sHR1Eeuxk8PMaUrsfQ" name="EventLoop" subUnit="_wHKIcHPSEeuY2qotRfvPgQ"/>
   <units xsi:type="henshin:LoopUnit" xmi:id="_xMy9wHR1Eeuxk8PMaUrsfQ" name="SequenceFlowLoop" subUnit="_H97rsHRUEeuxk8PMaUrsfQ"/>
   <units xsi:type="henshin:LoopUnit" xmi:id="_2_QEkHR1Eeuxk8PMaUrsfQ" name="MessageFlowLoop" subUnit="_0gW-EHRmEeuxk8PMaUrsfQ"/>
   <units xsi:type="henshin:LoopUnit" xmi:id="_73atYHR1Eeuxk8PMaUrsfQ" name="ArtifactLoop" subUnit="_IkSiQHRuEeuxk8PMaUrsfQ"/>
-  <units xsi:type="henshin:SequentialUnit" xmi:id="_IyFNAHR2Eeuxk8PMaUrsfQ" name="Final" subUnits="_BxhUYHOyEeuY2qotRfvPgQ _aJ1YcHR1Eeuxk8PMaUrsfQ _uPk-sHR1Eeuxk8PMaUrsfQ _i6kOQHR1Eeuxk8PMaUrsfQ _xMy9wHR1Eeuxk8PMaUrsfQ _2_QEkHR1Eeuxk8PMaUrsfQ _73atYHR1Eeuxk8PMaUrsfQ"/>
+  <units xsi:type="henshin:SequentialUnit" xmi:id="_IyFNAHR2Eeuxk8PMaUrsfQ" name="Final" subUnits="_BxhUYHOyEeuY2qotRfvPgQ _aJ1YcHR1Eeuxk8PMaUrsfQ _i6kOQHR1Eeuxk8PMaUrsfQ _xMy9wHR1Eeuxk8PMaUrsfQ _2_QEkHR1Eeuxk8PMaUrsfQ"/>
+  <units xsi:type="henshin:SequentialUnit" xmi:id="_V-c2UHTnEeu4YtknOXmv0w" name="start" subUnits="_BxhUYHOyEeuY2qotRfvPgQ _aJ1YcHR1Eeuxk8PMaUrsfQ _i6kOQHR1Eeuxk8PMaUrsfQ _uPk-sHR1Eeuxk8PMaUrsfQ _73atYHR1Eeuxk8PMaUrsfQ"/>
 </henshin:Module>

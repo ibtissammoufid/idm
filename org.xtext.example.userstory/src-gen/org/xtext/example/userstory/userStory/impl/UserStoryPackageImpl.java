@@ -278,7 +278,7 @@ public class UserStoryPackageImpl extends EPackageImpl implements UserStoryPacka
    * @generated
    */
   @Override
-  public EReference getUs_Activity1()
+  public EReference getUs_OtherActivity()
   {
     return (EReference)usEClass.getEStructuralFeatures().get(8);
   }
@@ -311,9 +311,20 @@ public class UserStoryPackageImpl extends EPackageImpl implements UserStoryPacka
    * @generated
    */
   @Override
-  public EAttribute getusActivity_Name()
+  public EAttribute getusActivity_Ref()
   {
     return (EAttribute)usActivityEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getusActivity_Name()
+  {
+    return (EAttribute)usActivityEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -459,10 +470,11 @@ public class UserStoryPackageImpl extends EPackageImpl implements UserStoryPacka
     createEReference(usEClass, US__OTHER_ARTIFACT);
     createEReference(usEClass, US__EVENT);
     createEReference(usEClass, US__OTHER_EVENT);
-    createEReference(usEClass, US__ACTIVITY1);
+    createEReference(usEClass, US__OTHER_ACTIVITY);
 
     usActivityEClass = createEClass(US_ACTIVITY);
     createEAttribute(usActivityEClass, US_ACTIVITY__ID);
+    createEAttribute(usActivityEClass, US_ACTIVITY__REF);
     createEAttribute(usActivityEClass, US_ACTIVITY__NAME);
 
     usTaskEClass = createEClass(US_TASK);
@@ -525,10 +537,11 @@ public class UserStoryPackageImpl extends EPackageImpl implements UserStoryPacka
     initEReference(getUs_OtherArtifact(), this.getusArtifact(), null, "otherArtifact", null, 0, 1, Us.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getUs_Event(), this.getusEvent(), null, "Event", null, 0, 1, Us.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getUs_OtherEvent(), this.getusEvent(), null, "otherEvent", null, 0, 1, Us.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getUs_Activity1(), this.getusActivity(), null, "activity1", null, 0, 1, Us.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getUs_OtherActivity(), this.getusActivity(), null, "otherActivity", null, 0, 1, Us.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(usActivityEClass, usActivity.class, "usActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getusActivity_Id(), ecorePackage.getEInt(), "id", null, 0, 1, usActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getusActivity_Ref(), ecorePackage.getEInt(), "ref", null, 0, 1, usActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getusActivity_Name(), ecorePackage.getEString(), "name", null, 0, 1, usActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(usTaskEClass, usTask.class, "usTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

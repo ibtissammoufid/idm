@@ -17,6 +17,7 @@ import bpmn.OR;
 import bpmn.Parallel;
 import bpmn.Pool;
 import bpmn.SequenceFlow;
+import bpmn.SousProcess;
 import bpmn.Split;
 import bpmn.SubProcess;
 import bpmn.Task;
@@ -77,6 +78,7 @@ public class BpmnFactoryImpl extends EFactoryImpl implements BpmnFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case BpmnPackage.PROCESS: return createProcess();
+			case BpmnPackage.SOUS_PROCESS: return createSousProcess();
 			case BpmnPackage.SUB_PROCESS: return createSubProcess();
 			case BpmnPackage.ARTIFACTS: return createArtifacts();
 			case BpmnPackage.POOL: return createPool();
@@ -140,6 +142,16 @@ public class BpmnFactoryImpl extends EFactoryImpl implements BpmnFactory {
 	public bpmn.Process createProcess() {
 		ProcessImpl process = new ProcessImpl();
 		return process;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SousProcess createSousProcess() {
+		SousProcessImpl sousProcess = new SousProcessImpl();
+		return sousProcess;
 	}
 
 	/**

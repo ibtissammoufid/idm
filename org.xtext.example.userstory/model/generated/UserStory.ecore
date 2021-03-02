@@ -21,10 +21,11 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="otherEvent" eType="#//usEvent"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="activity1" eType="#//usActivity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="otherActivity" eType="#//usActivity"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="usActivity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ref" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="usTask" eSuperTypes="#//usActivity"/>

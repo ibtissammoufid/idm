@@ -35,7 +35,7 @@ import org.xtext.example.userstory.userStory.usEvent;
  *   <li>{@link org.xtext.example.userstory.userStory.impl.UsImpl#getOtherArtifact <em>Other Artifact</em>}</li>
  *   <li>{@link org.xtext.example.userstory.userStory.impl.UsImpl#getEvent <em>Event</em>}</li>
  *   <li>{@link org.xtext.example.userstory.userStory.impl.UsImpl#getOtherEvent <em>Other Event</em>}</li>
- *   <li>{@link org.xtext.example.userstory.userStory.impl.UsImpl#getActivity1 <em>Activity1</em>}</li>
+ *   <li>{@link org.xtext.example.userstory.userStory.impl.UsImpl#getOtherActivity <em>Other Activity</em>}</li>
  * </ul>
  *
  * @generated
@@ -143,14 +143,14 @@ public class UsImpl extends MinimalEObjectImpl.Container implements Us
   protected usEvent otherEvent;
 
   /**
-   * The cached value of the '{@link #getActivity1() <em>Activity1</em>}' reference.
+   * The cached value of the '{@link #getOtherActivity() <em>Other Activity</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getActivity1()
+   * @see #getOtherActivity()
    * @generated
    * @ordered
    */
-  protected usActivity activity1;
+  protected usActivity otherActivity;
 
   /**
    * <!-- begin-user-doc -->
@@ -529,19 +529,19 @@ public class UsImpl extends MinimalEObjectImpl.Container implements Us
    * @generated
    */
   @Override
-  public usActivity getActivity1()
+  public usActivity getOtherActivity()
   {
-    if (activity1 != null && activity1.eIsProxy())
+    if (otherActivity != null && otherActivity.eIsProxy())
     {
-      InternalEObject oldActivity1 = (InternalEObject)activity1;
-      activity1 = (usActivity)eResolveProxy(oldActivity1);
-      if (activity1 != oldActivity1)
+      InternalEObject oldOtherActivity = (InternalEObject)otherActivity;
+      otherActivity = (usActivity)eResolveProxy(oldOtherActivity);
+      if (otherActivity != oldOtherActivity)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, UserStoryPackage.US__ACTIVITY1, oldActivity1, activity1));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, UserStoryPackage.US__OTHER_ACTIVITY, oldOtherActivity, otherActivity));
       }
     }
-    return activity1;
+    return otherActivity;
   }
 
   /**
@@ -549,9 +549,9 @@ public class UsImpl extends MinimalEObjectImpl.Container implements Us
    * <!-- end-user-doc -->
    * @generated
    */
-  public usActivity basicGetActivity1()
+  public usActivity basicGetOtherActivity()
   {
-    return activity1;
+    return otherActivity;
   }
 
   /**
@@ -560,12 +560,12 @@ public class UsImpl extends MinimalEObjectImpl.Container implements Us
    * @generated
    */
   @Override
-  public void setActivity1(usActivity newActivity1)
+  public void setOtherActivity(usActivity newOtherActivity)
   {
-    usActivity oldActivity1 = activity1;
-    activity1 = newActivity1;
+    usActivity oldOtherActivity = otherActivity;
+    otherActivity = newOtherActivity;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, UserStoryPackage.US__ACTIVITY1, oldActivity1, activity1));
+      eNotify(new ENotificationImpl(this, Notification.SET, UserStoryPackage.US__OTHER_ACTIVITY, oldOtherActivity, otherActivity));
   }
 
   /**
@@ -620,9 +620,9 @@ public class UsImpl extends MinimalEObjectImpl.Container implements Us
         return getEvent();
       case UserStoryPackage.US__OTHER_EVENT:
         return getOtherEvent();
-      case UserStoryPackage.US__ACTIVITY1:
-        if (resolve) return getActivity1();
-        return basicGetActivity1();
+      case UserStoryPackage.US__OTHER_ACTIVITY:
+        if (resolve) return getOtherActivity();
+        return basicGetOtherActivity();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -661,8 +661,8 @@ public class UsImpl extends MinimalEObjectImpl.Container implements Us
       case UserStoryPackage.US__OTHER_EVENT:
         setOtherEvent((usEvent)newValue);
         return;
-      case UserStoryPackage.US__ACTIVITY1:
-        setActivity1((usActivity)newValue);
+      case UserStoryPackage.US__OTHER_ACTIVITY:
+        setOtherActivity((usActivity)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -702,8 +702,8 @@ public class UsImpl extends MinimalEObjectImpl.Container implements Us
       case UserStoryPackage.US__OTHER_EVENT:
         setOtherEvent((usEvent)null);
         return;
-      case UserStoryPackage.US__ACTIVITY1:
-        setActivity1((usActivity)null);
+      case UserStoryPackage.US__OTHER_ACTIVITY:
+        setOtherActivity((usActivity)null);
         return;
     }
     super.eUnset(featureID);
@@ -735,8 +735,8 @@ public class UsImpl extends MinimalEObjectImpl.Container implements Us
         return event != null;
       case UserStoryPackage.US__OTHER_EVENT:
         return otherEvent != null;
-      case UserStoryPackage.US__ACTIVITY1:
-        return activity1 != null;
+      case UserStoryPackage.US__OTHER_ACTIVITY:
+        return otherActivity != null;
     }
     return super.eIsSet(featureID);
   }

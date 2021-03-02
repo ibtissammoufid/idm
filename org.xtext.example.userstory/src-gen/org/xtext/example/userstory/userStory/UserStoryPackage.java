@@ -177,13 +177,13 @@ public interface UserStoryPackage extends EPackage
   int US__OTHER_EVENT = 7;
 
   /**
-   * The feature id for the '<em><b>Activity1</b></em>' reference.
+   * The feature id for the '<em><b>Other Activity</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int US__ACTIVITY1 = 8;
+  int US__OTHER_ACTIVITY = 8;
 
   /**
    * The number of structural features of the '<em>Us</em>' class.
@@ -214,13 +214,22 @@ public interface UserStoryPackage extends EPackage
   int US_ACTIVITY__ID = 0;
 
   /**
+   * The feature id for the '<em><b>Ref</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int US_ACTIVITY__REF = 1;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int US_ACTIVITY__NAME = 1;
+  int US_ACTIVITY__NAME = 2;
 
   /**
    * The number of structural features of the '<em>us Activity</em>' class.
@@ -229,7 +238,7 @@ public interface UserStoryPackage extends EPackage
    * @generated
    * @ordered
    */
-  int US_ACTIVITY_FEATURE_COUNT = 2;
+  int US_ACTIVITY_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.xtext.example.userstory.userStory.impl.usTaskImpl <em>us Task</em>}' class.
@@ -249,6 +258,15 @@ public interface UserStoryPackage extends EPackage
    * @ordered
    */
   int US_TASK__ID = US_ACTIVITY__ID;
+
+  /**
+   * The feature id for the '<em><b>Ref</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int US_TASK__REF = US_ACTIVITY__REF;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -286,6 +304,15 @@ public interface UserStoryPackage extends EPackage
    * @ordered
    */
   int US_EVENT__ID = US_ACTIVITY__ID;
+
+  /**
+   * The feature id for the '<em><b>Ref</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int US_EVENT__REF = US_ACTIVITY__REF;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -520,15 +547,15 @@ public interface UserStoryPackage extends EPackage
   EReference getUs_OtherEvent();
 
   /**
-   * Returns the meta object for the reference '{@link org.xtext.example.userstory.userStory.Us#getActivity1 <em>Activity1</em>}'.
+   * Returns the meta object for the reference '{@link org.xtext.example.userstory.userStory.Us#getOtherActivity <em>Other Activity</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Activity1</em>'.
-   * @see org.xtext.example.userstory.userStory.Us#getActivity1()
+   * @return the meta object for the reference '<em>Other Activity</em>'.
+   * @see org.xtext.example.userstory.userStory.Us#getOtherActivity()
    * @see #getUs()
    * @generated
    */
-  EReference getUs_Activity1();
+  EReference getUs_OtherActivity();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.userstory.userStory.usActivity <em>us Activity</em>}'.
@@ -550,6 +577,17 @@ public interface UserStoryPackage extends EPackage
    * @generated
    */
   EAttribute getusActivity_Id();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.userstory.userStory.usActivity#getRef <em>Ref</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Ref</em>'.
+   * @see org.xtext.example.userstory.userStory.usActivity#getRef()
+   * @see #getusActivity()
+   * @generated
+   */
+  EAttribute getusActivity_Ref();
 
   /**
    * Returns the meta object for the attribute '{@link org.xtext.example.userstory.userStory.usActivity#getName <em>Name</em>}'.
@@ -781,12 +819,12 @@ public interface UserStoryPackage extends EPackage
     EReference US__OTHER_EVENT = eINSTANCE.getUs_OtherEvent();
 
     /**
-     * The meta object literal for the '<em><b>Activity1</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Other Activity</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference US__ACTIVITY1 = eINSTANCE.getUs_Activity1();
+    EReference US__OTHER_ACTIVITY = eINSTANCE.getUs_OtherActivity();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.userstory.userStory.impl.usActivityImpl <em>us Activity</em>}' class.
@@ -805,6 +843,14 @@ public interface UserStoryPackage extends EPackage
      * @generated
      */
     EAttribute US_ACTIVITY__ID = eINSTANCE.getusActivity_Id();
+
+    /**
+     * The meta object literal for the '<em><b>Ref</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute US_ACTIVITY__REF = eINSTANCE.getusActivity_Ref();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.

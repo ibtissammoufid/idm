@@ -98,11 +98,11 @@ public class UserStorySemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     (
 	 *         id=INT 
 	 *         titre=STRING? 
-	 *         role=Role 
-	 *         activity=usActivity 
+	 *         role=Role? 
+	 *         activity=usActivity? 
 	 *         (artifact=usArtifact otherArtifact=usArtifact*)? 
 	 *         (Event=usEvent otherEvent=usEvent*)? 
-	 *         activity1=[usActivity|ID]? 
+	 *         otherActivity=[usActivity|ID]* 
 	 *         Event=usEvent?
 	 *     )
 	 */
@@ -141,22 +141,10 @@ public class UserStorySemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     usEvent returns usEvent
 	 *
 	 * Constraint:
-	 *     (id=INT name=STRING type=INT)
+	 *     (id=INT ref=INT? name=STRING type=INT)
 	 */
 	protected void sequence_usEvent(ISerializationContext context, usEvent semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, UserStoryPackage.Literals.US_ACTIVITY__ID) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, UserStoryPackage.Literals.US_ACTIVITY__ID));
-			if (transientValues.isValueTransient(semanticObject, UserStoryPackage.Literals.US_ACTIVITY__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, UserStoryPackage.Literals.US_ACTIVITY__NAME));
-			if (transientValues.isValueTransient(semanticObject, UserStoryPackage.Literals.US_EVENT__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, UserStoryPackage.Literals.US_EVENT__TYPE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getUsEventAccess().getIdINTTerminalRuleCall_0_0(), semanticObject.getId());
-		feeder.accept(grammarAccess.getUsEventAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getUsEventAccess().getTypeINTTerminalRuleCall_2_0(), semanticObject.getType());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -166,19 +154,10 @@ public class UserStorySemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     usTask returns usTask
 	 *
 	 * Constraint:
-	 *     (id=INT name=STRING)
+	 *     (id=INT ref=INT? name=STRING)
 	 */
 	protected void sequence_usTask(ISerializationContext context, usTask semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, UserStoryPackage.Literals.US_ACTIVITY__ID) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, UserStoryPackage.Literals.US_ACTIVITY__ID));
-			if (transientValues.isValueTransient(semanticObject, UserStoryPackage.Literals.US_ACTIVITY__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, UserStoryPackage.Literals.US_ACTIVITY__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getUsTaskAccess().getIdINTTerminalRuleCall_0_0(), semanticObject.getId());
-		feeder.accept(grammarAccess.getUsTaskAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

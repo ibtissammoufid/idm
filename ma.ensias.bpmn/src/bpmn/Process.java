@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link bpmn.Process#getPool <em>Pool</em>}</li>
+ *   <li>{@link bpmn.Process#getSubprocess <em>Subprocess</em>}</li>
  * </ul>
  *
  * @see bpmn.BpmnPackage#getProcess()
@@ -32,5 +33,17 @@ public interface Process extends bpmn.Object {
 	 * @generated
 	 */
 	EList<Pool> getPool();
+
+	/**
+	 * Returns the value of the '<em><b>Subprocess</b></em>' containment reference list.
+	 * The list contents are of type {@link bpmn.SousProcess}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Subprocess</em>' containment reference list.
+	 * @see bpmn.BpmnPackage#getProcess_Subprocess()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<SousProcess> getSubprocess();
 
 } // Process

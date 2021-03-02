@@ -65,7 +65,7 @@ public interface BpmnPackage extends EPackage {
 	 * @see bpmn.impl.BpmnPackageImpl#getObject()
 	 * @generated
 	 */
-	int OBJECT = 7;
+	int OBJECT = 8;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -141,13 +141,22 @@ public interface BpmnPackage extends EPackage {
 	int PROCESS__POOL = OBJECT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Subprocess</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS__SUBPROCESS = OBJECT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Process</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_FEATURE_COUNT = OBJECT_FEATURE_COUNT + 1;
+	int PROCESS_FEATURE_COUNT = OBJECT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Process</em>' class.
@@ -166,7 +175,262 @@ public interface BpmnPackage extends EPackage {
 	 * @see bpmn.impl.BpmnPackageImpl#getActivity()
 	 * @generated
 	 */
-	int ACTIVITY = 3;
+	int ACTIVITY = 4;
+
+	/**
+	 * The meta object id for the '{@link bpmn.impl.GateWayImpl <em>Gate Way</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see bpmn.impl.GateWayImpl
+	 * @see bpmn.impl.BpmnPackageImpl#getGateWay()
+	 * @generated
+	 */
+	int GATE_WAY = 2;
+
+	/**
+	 * The meta object id for the '{@link bpmn.impl.SubProcessImpl <em>Sub Process</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see bpmn.impl.SubProcessImpl
+	 * @see bpmn.impl.BpmnPackageImpl#getSubProcess()
+	 * @generated
+	 */
+	int SUB_PROCESS = 3;
+
+	/**
+	 * The meta object id for the '{@link bpmn.impl.ArtifactsImpl <em>Artifacts</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see bpmn.impl.ArtifactsImpl
+	 * @see bpmn.impl.BpmnPackageImpl#getArtifacts()
+	 * @generated
+	 */
+	int ARTIFACTS = 5;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARTIFACTS__ID = OBJECT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARTIFACTS__NAME = OBJECT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARTIFACTS__TYPE = OBJECT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Artifacts</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARTIFACTS_FEATURE_COUNT = OBJECT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Artifacts</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARTIFACTS_OPERATION_COUNT = OBJECT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link bpmn.impl.PoolImpl <em>Pool</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see bpmn.impl.PoolImpl
+	 * @see bpmn.impl.BpmnPackageImpl#getPool()
+	 * @generated
+	 */
+	int POOL = 6;
+
+	/**
+	 * The meta object id for the '{@link bpmn.impl.FlowObjectImpl <em>Flow Object</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see bpmn.impl.FlowObjectImpl
+	 * @see bpmn.impl.BpmnPackageImpl#getFlowObject()
+	 * @generated
+	 */
+	int FLOW_OBJECT = 7;
+
+	/**
+	 * The meta object id for the '{@link bpmn.impl.EventImpl <em>Event</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see bpmn.impl.EventImpl
+	 * @see bpmn.impl.BpmnPackageImpl#getEvent()
+	 * @generated
+	 */
+	int EVENT = 9;
+
+	/**
+	 * The meta object id for the '{@link bpmn.impl.SplitImpl <em>Split</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see bpmn.impl.SplitImpl
+	 * @see bpmn.impl.BpmnPackageImpl#getSplit()
+	 * @generated
+	 */
+	int SPLIT = 16;
+
+	/**
+	 * The meta object id for the '{@link bpmn.impl.ParallelImpl <em>Parallel</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see bpmn.impl.ParallelImpl
+	 * @see bpmn.impl.BpmnPackageImpl#getParallel()
+	 * @generated
+	 */
+	int PARALLEL = 10;
+
+	/**
+	 * The meta object id for the '{@link bpmn.impl.ORImpl <em>OR</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see bpmn.impl.ORImpl
+	 * @see bpmn.impl.BpmnPackageImpl#getOR()
+	 * @generated
+	 */
+	int OR = 11;
+
+	/**
+	 * The meta object id for the '{@link bpmn.impl.XORImpl <em>XOR</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see bpmn.impl.XORImpl
+	 * @see bpmn.impl.BpmnPackageImpl#getXOR()
+	 * @generated
+	 */
+	int XOR = 12;
+
+	/**
+	 * The meta object id for the '{@link bpmn.impl.DataObjectImpl <em>Data Object</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see bpmn.impl.DataObjectImpl
+	 * @see bpmn.impl.BpmnPackageImpl#getDataObject()
+	 * @generated
+	 */
+	int DATA_OBJECT = 13;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_OBJECT__ID = ARTIFACTS__ID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_OBJECT__NAME = ARTIFACTS__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_OBJECT__TYPE = ARTIFACTS__TYPE;
+
+	/**
+	 * The number of structural features of the '<em>Data Object</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_OBJECT_FEATURE_COUNT = ARTIFACTS_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Data Object</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_OBJECT_OPERATION_COUNT = ARTIFACTS_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link bpmn.impl.SousProcessImpl <em>Sous Process</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see bpmn.impl.SousProcessImpl
+	 * @see bpmn.impl.BpmnPackageImpl#getSousProcess()
+	 * @generated
+	 */
+	int SOUS_PROCESS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOUS_PROCESS__ID = DATA_OBJECT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOUS_PROCESS__NAME = DATA_OBJECT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOUS_PROCESS__TYPE = DATA_OBJECT__TYPE;
+
+	/**
+	 * The number of structural features of the '<em>Sous Process</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOUS_PROCESS_FEATURE_COUNT = DATA_OBJECT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Sous Process</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOUS_PROCESS_OPERATION_COUNT = DATA_OBJECT_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -223,16 +487,6 @@ public interface BpmnPackage extends EPackage {
 	int ACTIVITY_OPERATION_COUNT = OBJECT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link bpmn.impl.GateWayImpl <em>Gate Way</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see bpmn.impl.GateWayImpl
-	 * @see bpmn.impl.BpmnPackageImpl#getGateWay()
-	 * @generated
-	 */
-	int GATE_WAY = 1;
-
-	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -287,16 +541,6 @@ public interface BpmnPackage extends EPackage {
 	int GATE_WAY_OPERATION_COUNT = ACTIVITY_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link bpmn.impl.SubProcessImpl <em>Sub Process</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see bpmn.impl.SubProcessImpl
-	 * @see bpmn.impl.BpmnPackageImpl#getSubProcess()
-	 * @generated
-	 */
-	int SUB_PROCESS = 2;
-
-	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -324,6 +568,15 @@ public interface BpmnPackage extends EPackage {
 	int SUB_PROCESS__POOL = PROCESS__POOL;
 
 	/**
+	 * The feature id for the '<em><b>Subprocess</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUB_PROCESS__SUBPROCESS = PROCESS__SUBPROCESS;
+
+	/**
 	 * The feature id for the '<em><b>Ref Sub Process</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -349,71 +602,6 @@ public interface BpmnPackage extends EPackage {
 	 * @ordered
 	 */
 	int SUB_PROCESS_OPERATION_COUNT = PROCESS_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link bpmn.impl.ArtifactsImpl <em>Artifacts</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see bpmn.impl.ArtifactsImpl
-	 * @see bpmn.impl.BpmnPackageImpl#getArtifacts()
-	 * @generated
-	 */
-	int ARTIFACTS = 4;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARTIFACTS__ID = OBJECT__ID;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARTIFACTS__NAME = OBJECT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARTIFACTS__TYPE = OBJECT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Artifacts</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARTIFACTS_FEATURE_COUNT = OBJECT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Artifacts</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARTIFACTS_OPERATION_COUNT = OBJECT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link bpmn.impl.PoolImpl <em>Pool</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see bpmn.impl.PoolImpl
-	 * @see bpmn.impl.BpmnPackageImpl#getPool()
-	 * @generated
-	 */
-	int POOL = 5;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -470,16 +658,6 @@ public interface BpmnPackage extends EPackage {
 	int POOL_OPERATION_COUNT = OBJECT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link bpmn.impl.FlowObjectImpl <em>Flow Object</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see bpmn.impl.FlowObjectImpl
-	 * @see bpmn.impl.BpmnPackageImpl#getFlowObject()
-	 * @generated
-	 */
-	int FLOW_OBJECT = 6;
-
-	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -514,16 +692,6 @@ public interface BpmnPackage extends EPackage {
 	 * @ordered
 	 */
 	int FLOW_OBJECT_OPERATION_COUNT = OBJECT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link bpmn.impl.EventImpl <em>Event</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see bpmn.impl.EventImpl
-	 * @see bpmn.impl.BpmnPackageImpl#getEvent()
-	 * @generated
-	 */
-	int EVENT = 8;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -589,16 +757,6 @@ public interface BpmnPackage extends EPackage {
 	int EVENT_OPERATION_COUNT = ACTIVITY_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link bpmn.impl.SplitImpl <em>Split</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see bpmn.impl.SplitImpl
-	 * @see bpmn.impl.BpmnPackageImpl#getSplit()
-	 * @generated
-	 */
-	int SPLIT = 15;
-
-	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -651,16 +809,6 @@ public interface BpmnPackage extends EPackage {
 	 * @ordered
 	 */
 	int SPLIT_OPERATION_COUNT = GATE_WAY_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link bpmn.impl.ParallelImpl <em>Parallel</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see bpmn.impl.ParallelImpl
-	 * @see bpmn.impl.BpmnPackageImpl#getParallel()
-	 * @generated
-	 */
-	int PARALLEL = 9;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -717,16 +865,6 @@ public interface BpmnPackage extends EPackage {
 	int PARALLEL_OPERATION_COUNT = SPLIT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link bpmn.impl.ORImpl <em>OR</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see bpmn.impl.ORImpl
-	 * @see bpmn.impl.BpmnPackageImpl#getOR()
-	 * @generated
-	 */
-	int OR = 10;
-
-	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -779,16 +917,6 @@ public interface BpmnPackage extends EPackage {
 	 * @ordered
 	 */
 	int OR_OPERATION_COUNT = SPLIT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link bpmn.impl.XORImpl <em>XOR</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see bpmn.impl.XORImpl
-	 * @see bpmn.impl.BpmnPackageImpl#getXOR()
-	 * @generated
-	 */
-	int XOR = 11;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -845,61 +973,6 @@ public interface BpmnPackage extends EPackage {
 	int XOR_OPERATION_COUNT = SPLIT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link bpmn.impl.DataObjectImpl <em>Data Object</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see bpmn.impl.DataObjectImpl
-	 * @see bpmn.impl.BpmnPackageImpl#getDataObject()
-	 * @generated
-	 */
-	int DATA_OBJECT = 12;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_OBJECT__ID = ARTIFACTS__ID;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_OBJECT__NAME = ARTIFACTS__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_OBJECT__TYPE = ARTIFACTS__TYPE;
-
-	/**
-	 * The number of structural features of the '<em>Data Object</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_OBJECT_FEATURE_COUNT = ARTIFACTS_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Data Object</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_OBJECT_OPERATION_COUNT = ARTIFACTS_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link bpmn.impl.TextAnnotationImpl <em>Text Annotation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -907,7 +980,7 @@ public interface BpmnPackage extends EPackage {
 	 * @see bpmn.impl.BpmnPackageImpl#getTextAnnotation()
 	 * @generated
 	 */
-	int TEXT_ANNOTATION = 13;
+	int TEXT_ANNOTATION = 14;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -962,7 +1035,7 @@ public interface BpmnPackage extends EPackage {
 	 * @see bpmn.impl.BpmnPackageImpl#getJoin()
 	 * @generated
 	 */
-	int JOIN = 14;
+	int JOIN = 15;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1026,7 +1099,7 @@ public interface BpmnPackage extends EPackage {
 	 * @see bpmn.impl.BpmnPackageImpl#getSequenceFlow()
 	 * @generated
 	 */
-	int SEQUENCE_FLOW = 16;
+	int SEQUENCE_FLOW = 17;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1081,7 +1154,7 @@ public interface BpmnPackage extends EPackage {
 	 * @see bpmn.impl.BpmnPackageImpl#getMessageFlow()
 	 * @generated
 	 */
-	int MESSAGE_FLOW = 17;
+	int MESSAGE_FLOW = 18;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1136,7 +1209,7 @@ public interface BpmnPackage extends EPackage {
 	 * @see bpmn.impl.BpmnPackageImpl#getDataAssociation()
 	 * @generated
 	 */
-	int DATA_ASSOCIATION = 18;
+	int DATA_ASSOCIATION = 19;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1182,7 +1255,7 @@ public interface BpmnPackage extends EPackage {
 	 * @see bpmn.impl.BpmnPackageImpl#getTask()
 	 * @generated
 	 */
-	int TASK = 19;
+	int TASK = 20;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1255,7 +1328,7 @@ public interface BpmnPackage extends EPackage {
 	 * @see bpmn.impl.BpmnPackageImpl#getDataStore()
 	 * @generated
 	 */
-	int DATA_STORE = 20;
+	int DATA_STORE = 21;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1310,7 +1383,7 @@ public interface BpmnPackage extends EPackage {
 	 * @see bpmn.impl.BpmnPackageImpl#getEventType()
 	 * @generated
 	 */
-	int EVENT_TYPE = 21;
+	int EVENT_TYPE = 22;
 
 	/**
 	 * The meta object id for the '{@link bpmn.ArtifactType <em>Artifact Type</em>}' enum.
@@ -1320,7 +1393,7 @@ public interface BpmnPackage extends EPackage {
 	 * @see bpmn.impl.BpmnPackageImpl#getArtifactType()
 	 * @generated
 	 */
-	int ARTIFACT_TYPE = 22;
+	int ARTIFACT_TYPE = 23;
 
 
 	/**
@@ -1343,6 +1416,27 @@ public interface BpmnPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getProcess_Pool();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link bpmn.Process#getSubprocess <em>Subprocess</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Subprocess</em>'.
+	 * @see bpmn.Process#getSubprocess()
+	 * @see #getProcess()
+	 * @generated
+	 */
+	EReference getProcess_Subprocess();
+
+	/**
+	 * Returns the meta object for class '{@link bpmn.SousProcess <em>Sous Process</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Sous Process</em>'.
+	 * @see bpmn.SousProcess
+	 * @generated
+	 */
+	EClass getSousProcess();
 
 	/**
 	 * Returns the meta object for class '{@link bpmn.GateWay <em>Gate Way</em>}'.
@@ -1736,6 +1830,24 @@ public interface BpmnPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PROCESS__POOL = eINSTANCE.getProcess_Pool();
+
+		/**
+		 * The meta object literal for the '<em><b>Subprocess</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROCESS__SUBPROCESS = eINSTANCE.getProcess_Subprocess();
+
+		/**
+		 * The meta object literal for the '{@link bpmn.impl.SousProcessImpl <em>Sous Process</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see bpmn.impl.SousProcessImpl
+		 * @see bpmn.impl.BpmnPackageImpl#getSousProcess()
+		 * @generated
+		 */
+		EClass SOUS_PROCESS = eINSTANCE.getSousProcess();
 
 		/**
 		 * The meta object literal for the '{@link bpmn.impl.GateWayImpl <em>Gate Way</em>}' class.

@@ -206,7 +206,7 @@ ruleUs returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
+		)?
 		otherlv_8='I'
 		{
 			newLeafNode(otherlv_8, grammarAccess.getUsAccess().getIKeyword_8());
@@ -249,7 +249,7 @@ ruleUs returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
+		)?
 		(
 			otherlv_15='Scenario'
 			{
@@ -378,10 +378,10 @@ ruleUs returns [EObject current=null]
 					}
 					otherlv_27=RULE_ID
 					{
-						newLeafNode(otherlv_27, grammarAccess.getUsAccess().getActivity1UsActivityCrossReference_18_2_0());
+						newLeafNode(otherlv_27, grammarAccess.getUsAccess().getOtherActivityUsActivityCrossReference_18_2_0());
 					}
 				)
-			)
+			)*
 		)?
 		(
 			otherlv_28='Then'
@@ -483,9 +483,27 @@ ruleusTask returns [EObject current=null]
 		)
 		(
 			(
-				lv_name_1_0=RULE_STRING
+				lv_ref_1_0=RULE_INT
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getUsTaskAccess().getNameSTRINGTerminalRuleCall_1_0());
+					newLeafNode(lv_ref_1_0, grammarAccess.getUsTaskAccess().getRefINTTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getUsTaskRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"ref",
+						lv_ref_1_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)?
+		(
+			(
+				lv_name_2_0=RULE_STRING
+				{
+					newLeafNode(lv_name_2_0, grammarAccess.getUsTaskAccess().getNameSTRINGTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -494,7 +512,7 @@ ruleusTask returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_1_0,
+						lv_name_2_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
@@ -538,9 +556,27 @@ ruleusEvent returns [EObject current=null]
 		)
 		(
 			(
-				lv_name_1_0=RULE_STRING
+				lv_ref_1_0=RULE_INT
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getUsEventAccess().getNameSTRINGTerminalRuleCall_1_0());
+					newLeafNode(lv_ref_1_0, grammarAccess.getUsEventAccess().getRefINTTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getUsEventRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"ref",
+						lv_ref_1_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)?
+		(
+			(
+				lv_name_2_0=RULE_STRING
+				{
+					newLeafNode(lv_name_2_0, grammarAccess.getUsEventAccess().getNameSTRINGTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -549,16 +585,16 @@ ruleusEvent returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_1_0,
+						lv_name_2_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
 		(
 			(
-				lv_type_2_0=RULE_INT
+				lv_type_3_0=RULE_INT
 				{
-					newLeafNode(lv_type_2_0, grammarAccess.getUsEventAccess().getTypeINTTerminalRuleCall_2_0());
+					newLeafNode(lv_type_3_0, grammarAccess.getUsEventAccess().getTypeINTTerminalRuleCall_3_0());
 				}
 				{
 					if ($current==null) {
@@ -567,7 +603,7 @@ ruleusEvent returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"type",
-						lv_type_2_0,
+						lv_type_3_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)

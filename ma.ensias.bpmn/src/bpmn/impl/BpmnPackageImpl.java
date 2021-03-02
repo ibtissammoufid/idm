@@ -19,6 +19,7 @@ import bpmn.MessageFlow;
 import bpmn.Parallel;
 import bpmn.Pool;
 import bpmn.SequenceFlow;
+import bpmn.SousProcess;
 import bpmn.Split;
 import bpmn.SubProcess;
 import bpmn.Task;
@@ -45,6 +46,13 @@ public class BpmnPackageImpl extends EPackageImpl implements BpmnPackage {
 	 * @generated
 	 */
 	private EClass processEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass sousProcessEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -277,6 +285,24 @@ public class BpmnPackageImpl extends EPackageImpl implements BpmnPackage {
 	 */
 	public EReference getProcess_Pool() {
 		return (EReference)processEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getProcess_Subprocess() {
+		return (EReference)processEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSousProcess() {
+		return sousProcessEClass;
 	}
 
 	/**
@@ -615,6 +641,9 @@ public class BpmnPackageImpl extends EPackageImpl implements BpmnPackage {
 		// Create classes and their features
 		processEClass = createEClass(PROCESS);
 		createEReference(processEClass, PROCESS__POOL);
+		createEReference(processEClass, PROCESS__SUBPROCESS);
+
+		sousProcessEClass = createEClass(SOUS_PROCESS);
 
 		gateWayEClass = createEClass(GATE_WAY);
 
@@ -702,6 +731,7 @@ public class BpmnPackageImpl extends EPackageImpl implements BpmnPackage {
 
 		// Add supertypes to classes
 		processEClass.getESuperTypes().add(this.getObject());
+		sousProcessEClass.getESuperTypes().add(this.getDataObject());
 		gateWayEClass.getESuperTypes().add(this.getActivity());
 		subProcessEClass.getESuperTypes().add(this.getProcess());
 		activityEClass.getESuperTypes().add(this.getObject());
@@ -725,6 +755,9 @@ public class BpmnPackageImpl extends EPackageImpl implements BpmnPackage {
 		// Initialize classes, features, and operations; add parameters
 		initEClass(processEClass, bpmn.Process.class, "Process", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getProcess_Pool(), this.getPool(), null, "pool", null, 0, -1, bpmn.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProcess_Subprocess(), this.getSousProcess(), null, "subprocess", null, 0, -1, bpmn.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(sousProcessEClass, SousProcess.class, "SousProcess", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(gateWayEClass, GateWay.class, "GateWay", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

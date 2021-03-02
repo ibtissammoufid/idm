@@ -22,6 +22,7 @@ import org.xtext.example.userstory.userStory.usActivity;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.example.userstory.userStory.impl.usActivityImpl#getId <em>Id</em>}</li>
+ *   <li>{@link org.xtext.example.userstory.userStory.impl.usActivityImpl#getRef <em>Ref</em>}</li>
  *   <li>{@link org.xtext.example.userstory.userStory.impl.usActivityImpl#getName <em>Name</em>}</li>
  * </ul>
  *
@@ -48,6 +49,26 @@ public class usActivityImpl extends MinimalEObjectImpl.Container implements usAc
    * @ordered
    */
   protected int id = ID_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getRef() <em>Ref</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRef()
+   * @generated
+   * @ordered
+   */
+  protected static final int REF_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getRef() <em>Ref</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRef()
+   * @generated
+   * @ordered
+   */
+  protected int ref = REF_EDEFAULT;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -121,6 +142,31 @@ public class usActivityImpl extends MinimalEObjectImpl.Container implements usAc
    * @generated
    */
   @Override
+  public int getRef()
+  {
+    return ref;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setRef(int newRef)
+  {
+    int oldRef = ref;
+    ref = newRef;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, UserStoryPackage.US_ACTIVITY__REF, oldRef, ref));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getName()
   {
     return name;
@@ -152,6 +198,8 @@ public class usActivityImpl extends MinimalEObjectImpl.Container implements usAc
     {
       case UserStoryPackage.US_ACTIVITY__ID:
         return getId();
+      case UserStoryPackage.US_ACTIVITY__REF:
+        return getRef();
       case UserStoryPackage.US_ACTIVITY__NAME:
         return getName();
     }
@@ -170,6 +218,9 @@ public class usActivityImpl extends MinimalEObjectImpl.Container implements usAc
     {
       case UserStoryPackage.US_ACTIVITY__ID:
         setId((Integer)newValue);
+        return;
+      case UserStoryPackage.US_ACTIVITY__REF:
+        setRef((Integer)newValue);
         return;
       case UserStoryPackage.US_ACTIVITY__NAME:
         setName((String)newValue);
@@ -191,6 +242,9 @@ public class usActivityImpl extends MinimalEObjectImpl.Container implements usAc
       case UserStoryPackage.US_ACTIVITY__ID:
         setId(ID_EDEFAULT);
         return;
+      case UserStoryPackage.US_ACTIVITY__REF:
+        setRef(REF_EDEFAULT);
+        return;
       case UserStoryPackage.US_ACTIVITY__NAME:
         setName(NAME_EDEFAULT);
         return;
@@ -210,6 +264,8 @@ public class usActivityImpl extends MinimalEObjectImpl.Container implements usAc
     {
       case UserStoryPackage.US_ACTIVITY__ID:
         return id != ID_EDEFAULT;
+      case UserStoryPackage.US_ACTIVITY__REF:
+        return ref != REF_EDEFAULT;
       case UserStoryPackage.US_ACTIVITY__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
@@ -229,6 +285,8 @@ public class usActivityImpl extends MinimalEObjectImpl.Container implements usAc
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (id: ");
     result.append(id);
+    result.append(", ref: ");
+    result.append(ref);
     result.append(", name: ");
     result.append(name);
     result.append(')');

@@ -19,10 +19,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UserStory.ecore#//Us/otherArtifact"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UserStory.ecore#//Us/Event"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UserStory.ecore#//Us/otherEvent"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference UserStory.ecore#//Us/activity1"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference UserStory.ecore#//Us/otherActivity"/>
     </genClasses>
     <genClasses ecoreClass="UserStory.ecore#//usActivity">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UserStory.ecore#//usActivity/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UserStory.ecore#//usActivity/ref"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UserStory.ecore#//usActivity/name"/>
     </genClasses>
     <genClasses ecoreClass="UserStory.ecore#//usTask"/>

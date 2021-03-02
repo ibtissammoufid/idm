@@ -8,11 +8,11 @@ Backlog:
 
 Us:
 	'User' 'story' ':' id=INT (titre=STRING)? 
-	'As' 'a' role=Role 'I' 'want' 'to' 'be' 'able' 'to' activity=usActivity 
+	'As' 'a' (role=Role)? 'I' 'want' 'to' 'be' 'able' 'to' (activity=usActivity)?
 	('Scenario' ':')?
 		('Given' artifact=usArtifact ('and' otherArtifact=usArtifact)* )?
 		('When' Event=usEvent ('and' otherEvent=usEvent)* )?
-		('coming' 'from' activity1=[usActivity])?
+		('coming' 'from' otherActivity=[usActivity]*)?
 	('Then' Event=usEvent)? 
 ;
 
@@ -22,11 +22,13 @@ usActivity:
 
 usTask:
 	id = INT
+	(ref = INT)?
 	name = STRING
 ;
 
 usEvent:
 	id = INT
+	(ref = INT)?
 	name = STRING
 	type = INT
 ;

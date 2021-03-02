@@ -17,6 +17,7 @@ import bpmn.OR;
 import bpmn.Parallel;
 import bpmn.Pool;
 import bpmn.SequenceFlow;
+import bpmn.SousProcess;
 import bpmn.Split;
 import bpmn.SubProcess;
 import bpmn.Task;
@@ -89,6 +90,15 @@ public class BpmnSwitch<T> extends Switch<T> {
 				bpmn.Process process = (bpmn.Process)theEObject;
 				T result = caseProcess(process);
 				if (result == null) result = caseObject(process);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BpmnPackage.SOUS_PROCESS: {
+				SousProcess sousProcess = (SousProcess)theEObject;
+				T result = caseSousProcess(sousProcess);
+				if (result == null) result = caseDataObject(sousProcess);
+				if (result == null) result = caseArtifacts(sousProcess);
+				if (result == null) result = caseObject(sousProcess);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -270,6 +280,21 @@ public class BpmnSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseProcess(bpmn.Process object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Sous Process</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Sous Process</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSousProcess(SousProcess object) {
 		return null;
 	}
 

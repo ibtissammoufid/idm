@@ -13,10 +13,10 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		Injector injector = new UserStoryStandaloneSetup().createInjectorAndDoEMFRegistration();
 		ResourceSet resourceSet = injector.getInstance(ResourceSet.class);
-		Resource resource = resourceSet.getResource(URI.createURI("./model/test.us"), true);
+		Resource resource = resourceSet.getResource(URI.createURI("./model/test_2.us"), true);
 		resource.load(null);
 		EcoreUtil.resolveAll(resourceSet);
-		Resource xmiResource = resourceSet.createResource(URI.createURI("./model/result.xmi"));
+		Resource xmiResource = resourceSet.createResource(URI.createURI("./model/userstory_2.xmi"));
 		xmiResource.getContents().add(resource.getContents().get(0));
 		xmiResource.save(null);
 	}

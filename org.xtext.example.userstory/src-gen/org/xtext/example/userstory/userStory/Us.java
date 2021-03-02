@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.example.userstory.userStory.Us#getOtherArtifact <em>Other Artifact</em>}</li>
  *   <li>{@link org.xtext.example.userstory.userStory.Us#getEvent <em>Event</em>}</li>
  *   <li>{@link org.xtext.example.userstory.userStory.Us#getOtherEvent <em>Other Event</em>}</li>
- *   <li>{@link org.xtext.example.userstory.userStory.Us#getActivity1 <em>Activity1</em>}</li>
+ *   <li>{@link org.xtext.example.userstory.userStory.Us#getOtherActivity <em>Other Activity</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.userstory.userStory.UserStoryPackage#getUs()
@@ -208,25 +208,25 @@ public interface Us extends EObject
   void setOtherEvent(usEvent value);
 
   /**
-   * Returns the value of the '<em><b>Activity1</b></em>' reference.
+   * Returns the value of the '<em><b>Other Activity</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Activity1</em>' reference.
-   * @see #setActivity1(usActivity)
-   * @see org.xtext.example.userstory.userStory.UserStoryPackage#getUs_Activity1()
+   * @return the value of the '<em>Other Activity</em>' reference.
+   * @see #setOtherActivity(usActivity)
+   * @see org.xtext.example.userstory.userStory.UserStoryPackage#getUs_OtherActivity()
    * @model
    * @generated
    */
-  usActivity getActivity1();
+  usActivity getOtherActivity();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.userstory.userStory.Us#getActivity1 <em>Activity1</em>}' reference.
+   * Sets the value of the '{@link org.xtext.example.userstory.userStory.Us#getOtherActivity <em>Other Activity</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Activity1</em>' reference.
-   * @see #getActivity1()
+   * @param value the new value of the '<em>Other Activity</em>' reference.
+   * @see #getOtherActivity()
    * @generated
    */
-  void setActivity1(usActivity value);
+  void setOtherActivity(usActivity value);
 
 } // Us

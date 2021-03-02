@@ -21,11 +21,13 @@ import org.xtext.example.userstory.services.UserStoryGrammarAccess;
 public class UserStorySyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected UserStoryGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_Us___ComingKeyword_18_0_FromKeyword_18_1__q;
 	protected AbstractElementAlias match_Us___ScenarioKeyword_15_0_ColonKeyword_15_1__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (UserStoryGrammarAccess) access;
+		match_Us___ComingKeyword_18_0_FromKeyword_18_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getUsAccess().getComingKeyword_18_0()), new TokenAlias(false, false, grammarAccess.getUsAccess().getFromKeyword_18_1()));
 		match_Us___ScenarioKeyword_15_0_ColonKeyword_15_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getUsAccess().getScenarioKeyword_15_0()), new TokenAlias(false, false, grammarAccess.getUsAccess().getColonKeyword_15_1()));
 	}
 	
@@ -41,7 +43,9 @@ public class UserStorySyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Us___ScenarioKeyword_15_0_ColonKeyword_15_1__q.equals(syntax))
+			if (match_Us___ComingKeyword_18_0_FromKeyword_18_1__q.equals(syntax))
+				emit_Us___ComingKeyword_18_0_FromKeyword_18_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Us___ScenarioKeyword_15_0_ColonKeyword_15_1__q.equals(syntax))
 				emit_Us___ScenarioKeyword_15_0_ColonKeyword_15_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
@@ -49,14 +53,55 @@ public class UserStorySyntacticSequencer extends AbstractSyntacticSequencer {
 
 	/**
 	 * Ambiguous syntax:
+	 *     ('coming' 'from')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     Event=usEvent (ambiguity) 'Then' Event=usEvent
+	 *     Event=usEvent (ambiguity) (rule end)
+	 *     activity=usActivity ('Scenario' ':')? (ambiguity) 'Then' Event=usEvent
+	 *     activity=usActivity ('Scenario' ':')? (ambiguity) (rule end)
+	 *     artifact=usArtifact (ambiguity) 'Then' Event=usEvent
+	 *     artifact=usArtifact (ambiguity) (rule end)
+	 *     id=INT 'As' 'a' 'I' 'want' 'to' 'be' 'able' 'to' ('Scenario' ':')? (ambiguity) 'Then' Event=usEvent
+	 *     id=INT 'As' 'a' 'I' 'want' 'to' 'be' 'able' 'to' ('Scenario' ':')? (ambiguity) (rule end)
+	 *     otherArtifact=usArtifact (ambiguity) 'Then' Event=usEvent
+	 *     otherArtifact=usArtifact (ambiguity) (rule end)
+	 *     otherEvent=usEvent (ambiguity) 'Then' Event=usEvent
+	 *     otherEvent=usEvent (ambiguity) (rule end)
+	 *     role=Role 'I' 'want' 'to' 'be' 'able' 'to' ('Scenario' ':')? (ambiguity) 'Then' Event=usEvent
+	 *     role=Role 'I' 'want' 'to' 'be' 'able' 'to' ('Scenario' ':')? (ambiguity) (rule end)
+	 *     titre=STRING 'As' 'a' 'I' 'want' 'to' 'be' 'able' 'to' ('Scenario' ':')? (ambiguity) 'Then' Event=usEvent
+	 *     titre=STRING 'As' 'a' 'I' 'want' 'to' 'be' 'able' 'to' ('Scenario' ':')? (ambiguity) (rule end)
+	 */
+	protected void emit_Us___ComingKeyword_18_0_FromKeyword_18_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
 	 *     ('Scenario' ':')?
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     activity=usActivity (ambiguity) 'Given' artifact=usArtifact
-	 *     activity=usActivity (ambiguity) 'Then' Event=usEvent
 	 *     activity=usActivity (ambiguity) 'When' Event=usEvent
-	 *     activity=usActivity (ambiguity) 'coming' 'from' activity1=[usActivity|ID]
-	 *     activity=usActivity (ambiguity) (rule end)
+	 *     activity=usActivity (ambiguity) 'coming' 'from' otherActivity=[usActivity|ID]
+	 *     activity=usActivity (ambiguity) ('coming' 'from')? 'Then' Event=usEvent
+	 *     activity=usActivity (ambiguity) ('coming' 'from')? (rule end)
+	 *     id=INT 'As' 'a' 'I' 'want' 'to' 'be' 'able' 'to' (ambiguity) 'Given' artifact=usArtifact
+	 *     id=INT 'As' 'a' 'I' 'want' 'to' 'be' 'able' 'to' (ambiguity) 'When' Event=usEvent
+	 *     id=INT 'As' 'a' 'I' 'want' 'to' 'be' 'able' 'to' (ambiguity) 'coming' 'from' otherActivity=[usActivity|ID]
+	 *     id=INT 'As' 'a' 'I' 'want' 'to' 'be' 'able' 'to' (ambiguity) ('coming' 'from')? 'Then' Event=usEvent
+	 *     id=INT 'As' 'a' 'I' 'want' 'to' 'be' 'able' 'to' (ambiguity) ('coming' 'from')? (rule end)
+	 *     role=Role 'I' 'want' 'to' 'be' 'able' 'to' (ambiguity) 'Given' artifact=usArtifact
+	 *     role=Role 'I' 'want' 'to' 'be' 'able' 'to' (ambiguity) 'When' Event=usEvent
+	 *     role=Role 'I' 'want' 'to' 'be' 'able' 'to' (ambiguity) 'coming' 'from' otherActivity=[usActivity|ID]
+	 *     role=Role 'I' 'want' 'to' 'be' 'able' 'to' (ambiguity) ('coming' 'from')? 'Then' Event=usEvent
+	 *     role=Role 'I' 'want' 'to' 'be' 'able' 'to' (ambiguity) ('coming' 'from')? (rule end)
+	 *     titre=STRING 'As' 'a' 'I' 'want' 'to' 'be' 'able' 'to' (ambiguity) 'Given' artifact=usArtifact
+	 *     titre=STRING 'As' 'a' 'I' 'want' 'to' 'be' 'able' 'to' (ambiguity) 'When' Event=usEvent
+	 *     titre=STRING 'As' 'a' 'I' 'want' 'to' 'be' 'able' 'to' (ambiguity) 'coming' 'from' otherActivity=[usActivity|ID]
+	 *     titre=STRING 'As' 'a' 'I' 'want' 'to' 'be' 'able' 'to' (ambiguity) ('coming' 'from')? 'Then' Event=usEvent
+	 *     titre=STRING 'As' 'a' 'I' 'want' 'to' 'be' 'able' 'to' (ambiguity) ('coming' 'from')? (rule end)
 	 */
 	protected void emit_Us___ScenarioKeyword_15_0_ColonKeyword_15_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

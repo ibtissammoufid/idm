@@ -18,7 +18,9 @@
     </genEnums>
     <genClasses ecoreClass="bpmn.ecore#//Process">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpmn.ecore#//Process/pool"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpmn.ecore#//Process/subprocess"/>
     </genClasses>
+    <genClasses ecoreClass="bpmn.ecore#//SousProcess"/>
     <genClasses image="false" ecoreClass="bpmn.ecore#//GateWay"/>
     <genClasses ecoreClass="bpmn.ecore#//SubProcess">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpmn.ecore#//SubProcess/Ref_SubProcess"/>

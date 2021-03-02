@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.example.userstory.userStory.usActivity#getId <em>Id</em>}</li>
+ *   <li>{@link org.xtext.example.userstory.userStory.usActivity#getRef <em>Ref</em>}</li>
  *   <li>{@link org.xtext.example.userstory.userStory.usActivity#getName <em>Name</em>}</li>
  * </ul>
  *
@@ -45,6 +46,28 @@ public interface usActivity extends EObject
    * @generated
    */
   void setId(int value);
+
+  /**
+   * Returns the value of the '<em><b>Ref</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Ref</em>' attribute.
+   * @see #setRef(int)
+   * @see org.xtext.example.userstory.userStory.UserStoryPackage#getusActivity_Ref()
+   * @model
+   * @generated
+   */
+  int getRef();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.userstory.userStory.usActivity#getRef <em>Ref</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Ref</em>' attribute.
+   * @see #getRef()
+   * @generated
+   */
+  void setRef(int value);
 
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

@@ -31,6 +31,15 @@ public interface BpmnFactory extends EFactory {
 	Process createProcess();
 
 	/**
+	 * Returns a new object of class '<em>Sous Process</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Sous Process</em>'.
+	 * @generated
+	 */
+	SousProcess createSousProcess();
+
+	/**
 	 * Returns a new object of class '<em>Sub Process</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
